@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-07">
+  <title>Rings and modules</title>
+  <section xml:id="course-07-lesson-01">
+    <title>Rings and ideals</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-02">
+    <title>Quotient rings</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-03">
+    <title>Prime and maximal ideals</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-04">
+    <title>Chinese remainder theorem</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-05">
+    <title>Localization</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-06">
+    <title>Factorization</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-07">
+    <title>Modules</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>An <m>R-module</m> generalizes a vector space by allowing scalars from a ring.</p>
+      </statement>
+    </definition>
+    <p>Unlike vector spaces, modules can have torsion and need not have bases.</p>
+    <p><m>R^{m}</m> <m>\to</m> <m>R^{n}</m> <m>\to</m> <m>M</m> <m>\to</m> 0</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>A generating set yields a surjection from a free module; its kernel records the relations.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Give a <m>Z-module</m> that is not free.</p>
+        </statement>
+        <solution>
+          <p><m>Z/2Z</m>, since its nonzero element is torsion.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Rings, Exact sequences, Tensor products, Jordan form.</p>
+  </section>
+  <section xml:id="course-07-lesson-08">
+    <title>Free modules</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-07-lesson-09">
+    <title>PID structure theorem</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

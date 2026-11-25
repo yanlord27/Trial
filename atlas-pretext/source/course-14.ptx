@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-14">
+  <title>Smooth manifolds</title>
+  <section xml:id="course-14-lesson-01">
+    <title>Smooth manifolds</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A smooth <m>n-manifold</m> is locally modeled on <m>R^{n}</m> with smooth coordinate transitions (and is Hausdorff and second countable).</p>
+      </statement>
+    </definition>
+    <p>Coordinates are local descriptions, not the object itself.</p>
+    <p><m>\phi</m>: <m>U</m> <m>\to</m> <m>R^{n}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Smooth transition maps ensure that differentiability is independent of the chart.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is <m>S^{2}</m> not covered by a single chart?</p>
+        </statement>
+        <solution>
+          <p>It is compact, whereas a nonempty open subset of <m>R^{2}</m> is not compact.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tangent spaces, Vector bundles, Covering spaces.</p>
+  </section>
+  <section xml:id="course-14-lesson-02">
+    <title>Tangent spaces</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p><m>T_{p}M</m> is the vector space of derivations at <m>p</m>, equivalently velocities of curves through <m>p</m>.</p>
+      </statement>
+    </definition>
+    <p>A tangent vector tells you how functions change in a chosen infinitesimal direction.</p>
+    <p><m>v(fg)=v(f)g(p)+f(p)v(g)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>In local coordinates, the chain rule (or the local first-order decomposition of f) gives <m>v(f)=\sum v(x^{i})\partial _{i}f(p)</m>.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>How does a smooth map act on tangent vectors?</p>
+        </statement>
+        <solution>
+          <p>By pushforward: <m>(dF_{p}v)(h)=v(h\circ F)</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Manifolds, Vector bundles, Connections.</p>
+  </section>
+  <section xml:id="course-14-lesson-03">
+    <title>Smooth maps and submanifolds</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-14-lesson-04">
+    <title>Vector bundles</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A vector bundle is a family of vector spaces locally trivial over a base.</p>
+      </statement>
+    </definition>
+    <p>A vector space lives over each point; local frames identify nearby fibers without canonically identifying all fibers.</p>
+    <p><m>E|_{u}</m> <m>\cong</m> <m>U</m> <m>\times</m> <m>R^{k}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Transition functions take values in <m>\operatorname{GL}(k)</m> and describe how local trivializations glue.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Is every vector bundle globally trivial?</p>
+        </statement>
+        <solution>
+          <p>No: the <m>M</m>öbius line bundle is a counterexample.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tangent spaces, Tensor products, Connections.</p>
+  </section>
+  <section xml:id="course-14-lesson-05">
+    <title>Vector fields and flows</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-14-lesson-06">
+    <title>Lie brackets</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-14-lesson-07">
+    <title>Frobenius theorem</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A smooth <m>constant-\operatorname{rank}</m> distribution is integrable exactly when it is involutive.</p>
+      </statement>
+    </definition>
+    <p>Allowed directions form tangent planes of actual leaves precisely when brackets introduce no forbidden directions.</p>
+    <p>[X,Y] <m>\in</m> <m>\Gamma (D)</m> for X,Y <m>\in</m> <m>\Gamma (D)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Necessity follows because brackets of fields tangent to a leaf remain tangent. Sufficiency follows from local straightening of a commuting frame.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Is <m>\operatorname{span}(\partial _{x}+y\partial z</m>, <m>\partial</m>ᵧ) involutive?</p>
+        </statement>
+        <solution>
+          <p>No: the bracket is <m>-\partial z</m>, which is not in the <m>\operatorname{span}</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tangent spaces, Differential forms, Manifolds.</p>
+  </section>
+  <section xml:id="course-14-lesson-08">
+    <title>Differential forms</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A differential <m>k-form</m> is a smooth section of the kth exterior power of the cotangent bundle.</p>
+      </statement>
+    </definition>
+    <p>Forms measure oriented infinitesimal lengths, areas and volumes.</p>
+    <p><m>d^{2}=0</m>;  <m>d(\alpha</m>∧<m>\beta )=d\alpha</m>∧<m>\beta +(-1)^{k}\alpha</m>∧<m>d\beta</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>In coordinates, <m>d</m> differentiates coefficients and wedges coordinate covectors; mixed partial symmetry gives <m>d^{2}=0</m>.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is every exact form closed?</p>
+        </statement>
+        <solution>
+          <p>If <m>\omega =d\eta</m>, then <m>d\omega =d^{2}\eta =0</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Dual spaces, Vector bundles, Homology, Frobenius theorem.</p>
+  </section>
+  <section xml:id="course-14-lesson-09">
+    <title>Stokes theorem</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

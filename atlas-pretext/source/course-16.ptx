@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-16">
+  <title>Homological algebra</title>
+  <section xml:id="course-16-lesson-01">
+    <title>Exact sequences</title>
+    <p>Exactness formalizes the idea that every obstruction to one map is accounted for by the preceding map.</p>
+    <definition>
+      <statement>
+        <p>A sequence <m>A\to</m> <m>B\to</m> <m>C</m> is exact at <m>B</m> if <m>\operatorname{im}</m> <m>f=\operatorname{ker}</m> <m>g</m>, where <m>f</m> and <m>g</m> are the successive maps. In particular <m>gf=0</m>, but this condition alone is weaker than exactness.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>A sequence <m>0\to</m> <m>A</m> <m>\to</m> <m>B</m> <m>\to</m> <m>C</m> <m>\to 0</m> is exact precisely when the first nonzero map is injective, the second is surjective, and the image of the first equals the kernel of the second.</p>
+      </statement>
+      <proof>
+        <p>At <m>A</m>, the incoming image is zero, so the outgoing kernel is zero. At <m>C</m> the outgoing kernel is all of <m>C</m>, so the incoming image is all of <m>C</m>. The middle equality is exactly the definition.</p>
+      </proof>
+    </proposition>
+    <example>
+      <p>For <m>n\ge 2</m>, the sequence <m>0\to \mathbb Z</m> <m>\to \mathbb Z</m> <m>\to \mathbb Z /n\mathbb Z \to 0</m> is exact with maps multiplication by <m>n</m> and reduction modulo <m>n</m>. It does not split: any map from the finite group <m>\mathbb Z /n\mathbb Z</m> to the torsion-free group <m>\mathbb Z</m> is zero.</p>
+    </example>
+    <theorem>
+      <title>quotient interpretation</title>
+      <statement>
+        <p>For a short exact sequence of modules, <m>C</m> is canonically isomorphic to <m>B/\operatorname{im}</m> <m>f</m> by the first isomorphism theorem. This does not identify <m>B</m> with <m>A\oplus C</m> unless the sequence splits.</p>
+      </statement>
+    </theorem>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Give maps with <m>gf=0</m> but which are not exact at <m>B</m>.</p>
+        </statement>
+        <solution>
+          <p>Take <m>A=B=C=\mathbb Z</m> and both maps zero. The first image is zero but the second kernel is <m>\mathbb Z</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Modules, Homology, Tor, Ext.</p>
+  </section>
+  <section xml:id="course-16-lesson-02">
+    <title>Split exact sequences</title>
+    <p>A split extension has no hidden interaction between its submodule and quotient.</p>
+    <theorem>
+      <title>splitting lemma</title>
+      <statement>
+        <p>For a short exact sequence <m>0\to A</m> —<m>i\to</m> <m>B</m> —<m>p\to</m> <m>C\to 0</m> of modules, the following are equivalent: <m>i</m> has a left inverse, <m>p</m> has a right inverse, and the sequence is isomorphic to the standard direct-sum sequence.</p>
+      </statement>
+      <proof>
+        <p>Given a section <m>s:C\to B</m> with <m>ps=id</m>, define <m>F:A\oplus C\to B</m> by <m>F(a,c)=i(a)+s(c)</m>. Applying <m>p</m> proves injectivity; subtracting <m>s(p(b))</m> from <m>b</m> proves surjectivity. The inverse composed with projection onto <m>A</m> gives a retraction. Conversely if <m>r</m> <m>i=id</m>, then <m>\operatorname{ker}</m> <m>r</m> maps isomorphically onto <m>C</m> under <m>p</m>: injectivity follows from exactness, and <m>b-i(r(b))</m> gives a lift in <m>\operatorname{ker}</m> <m>r</m>. Invert that restriction to obtain <m>s</m>.</p>
+      </proof>
+    </theorem>
+    <example>
+      <p>Every short exact sequence of vector spaces splits by extending a basis of the subspace, assuming the usual choice principle. The splitting is usually not canonical.</p>
+    </example>
+    <example>
+      <title>Counterexample</title>
+      <p>The sequence <m>0\to \mathbb Z</m> —<m>2\to \mathbb Z \to \mathbb Z /2\mathbb Z \to 0</m> does not split, since a section would send a nonzero torsion element into a torsion-free group.</p>
+    </example>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>If <m>C</m> is free, why does the sequence split?</p>
+        </statement>
+        <solution>
+          <p>Choose a lift in <m>B</m> for each basis element of <m>C</m> and extend linearly to a section.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-16-lesson-03">
+    <title>Chain complexes</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-16-lesson-04">
+    <title>Homology</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>Homology measures the failure of a chain complex to be exact.</p>
+      </statement>
+    </definition>
+    <p>Cycles are things with zero boundary; boundaries are cycles explained by the previous dimension.</p>
+    <p><m>H_{n}=\operatorname{ker}</m> <m>d_{n}</m> <m>/</m> <m>\operatorname{im}</m> <m>d_{n}</m>₊<m>_{1}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Since <m>d_{n}d_{n}</m>₊<m>_{1}=0</m>, boundaries lie in cycles and the quotient is defined.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When is <m>H_{n}</m> zero?</p>
+        </statement>
+        <solution>
+          <p>Exactly when the complex is exact at degree <m>n</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Exact sequences, Differential forms, Fundamental group, Tor, Ext.</p>
+  </section>
+  <section xml:id="course-16-lesson-05">
+    <title>Snake lemma</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-16-lesson-06">
+    <title>Projective and injective modules</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-16-lesson-07">
+    <title>Resolutions</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-16-lesson-08">
+    <title>Tor and Ext</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

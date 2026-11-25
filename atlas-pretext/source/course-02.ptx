@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-02">
+  <title>Linear algebra</title>
+  <section xml:id="course-02-lesson-01">
+    <title>Vector spaces and bases</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-02-lesson-02">
+    <title>Linear maps and quotients</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-02-lesson-03">
+    <title>Determinants</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-02-lesson-04">
+    <title>Eigenvalues and canonical forms</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-02-lesson-05">
+    <title>Dual spaces</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A dual vector space <m>V*</m> consists of linear maps <m>V</m> <m>\to</m> <m>k</m>.</p>
+      </statement>
+    </definition>
+    <p>A vector is an input; a covector is a linear measurement of that input.</p>
+    <p><m>V*</m> <m>=</m> <m>Hom_{k}(V,k)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>For a basis <m>e_{i}</m>, define <m>e^{i}(e_{j})=\delta ^{i}_{j}</m>. These covectors form a basis of <m>V*</m> by expansion of any linear functional.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is <m>V</m> <m>\to</m> <m>V**</m> canonical, while <m>V</m> <m>\to</m> <m>V*</m> generally is not?</p>
+        </statement>
+        <solution>
+          <p>Evaluation requires no basis; identifying <m>V</m> with <m>V*</m> generally requires additional structure.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tensor products, Differential forms, Yoneda lemma.</p>
+  </section>
+  <section xml:id="course-02-lesson-06">
+    <title>Bilinear forms</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

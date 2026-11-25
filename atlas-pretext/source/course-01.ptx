@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-01">
+  <title>Mathematical foundations</title>
+  <section xml:id="course-01-lesson-01">
+    <title>Sets and functions</title>
+    <p>Sets are the basic language in which mathematical objects are described. Functions then allow us to compare objects and transport structure between them.</p>
+    <definition>
+      <title>sets and membership</title>
+      <statement>
+        <p>A set is a collection of distinct objects, called its elements. We write <m>x</m> <m>\in</m> <m>A</m> if <m>x</m> belongs to <m>A</m>. Two sets <m>A</m> and <m>B</m> are equal if and only if they have exactly the same elements. The empty set <m>\varnothing</m> has no elements. We write <m>A</m> <m>\subseteq</m> <m>B</m> if every element of <m>A</m> belongs to <m>B</m>.</p>
+      </statement>
+    </definition>
+    <example>
+      <title>membership versus inclusion</title>
+      <p>Let <m>A=\{1,2\}</m> and <m>B=\{1,2,\{1,2\}\}</m>. Then <m>A</m> <m>\subseteq</m> <m>B</m> and <m>A</m> <m>\in</m> <m>B</m>. These are different assertions: the first concerns the elements of <m>A</m>, whereas the second treats <m>A</m> itself as a single object. In particular <m>\varnothing</m> <m>\subseteq</m> <m>A</m> for every <m>A</m>, but <m>\varnothing</m> need not belong to <m>A</m>.</p>
+    </example>
+    <definition>
+      <title>set operations</title>
+      <statement>
+        <p>The union <m>A</m> <m>\cup</m> <m>B</m> consists of elements belonging to at least one set; the intersection <m>A</m> <m>\cap</m> <m>B</m> consists of elements belonging to both. The difference <m>A</m> <m>\setminus</m> <m>B</m> consists of elements of <m>A</m> not in <m>B</m>. If <m>A</m> <m>\subseteq</m> <m>U</m>, its complement in <m>U</m> is <m>U</m> <m>\setminus</m> <m>A</m>. The power set <m>P(A)</m> consists of all subsets of <m>A</m>.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>distributivity</title>
+      <statement>
+        <p>For any sets A,B,C, we have <m>A</m> <m>\cap</m> (B <m>\cup</m> C) <m>=</m> (A <m>\cap</m> B) <m>\cup</m> (A <m>\cap</m> C).</p>
+      </statement>
+      <proof>
+        <p>Let <m>x</m> belong to the left side. Then <m>x</m> belongs to <m>A</m> and belongs to <m>B</m> or <m>C</m>. In the first case <m>x</m> belongs to <m>A</m> <m>\cap</m> <m>B</m>; in the second it belongs to <m>A</m> <m>\cap</m> <m>C</m>. Thus <m>x</m> belongs to the right side. Conversely, if <m>x</m> belongs to the right side, it belongs to <m>A</m> <m>\cap</m> <m>B</m> or <m>A</m> <m>\cap</m> <m>C</m>. In either case it belongs to <m>A</m> and to <m>B</m> <m>\cup</m> <m>C</m>, hence to the left side. The two inclusions establish equality.</p>
+      </proof>
+    </proposition>
+    <definition>
+      <title>indexed families and products</title>
+      <statement>
+        <p>For a family <m>(A_{i})</m> indexed by a set <m>I</m>, the union consists of <m>x</m> belonging to <m>A_{i}</m> for some <m>i</m> <m>\in</m> <m>I</m>; the intersection consists of <m>x</m> belonging to <m>A_{i}</m> for every <m>i</m> <m>\in</m> <m>I</m> (inside a specified ambient set). The Cartesian product <m>A</m> <m>\times</m> <m>B</m> consists of ordered pairs (a,b) with <m>a</m> <m>\in</m> <m>A</m> and <m>b</m> <m>\in</m> <m>B</m>. Ordered pairs are equal precisely when both coordinates agree.</p>
+      </statement>
+    </definition>
+    <definition>
+      <title>functions</title>
+      <statement>
+        <p>A function <m>f:A\to B</m> assigns to each a <m>\in</m> <m>A</m> exactly one element <m>f(a)</m> <m>\in</m> <m>B</m>. A is its domain and <m>B</m> its codomain. Formally its graph is a subset of <m>A</m> <m>\times</m> <m>B</m> containing exactly one pair with first coordinate a for every a <m>\in</m> <m>A</m>. The image <m>f(A)</m> need not equal <m>B</m>.</p>
+      </statement>
+    </definition>
+    <definition>
+      <title>image and preimage</title>
+      <statement>
+        <p>For <m>S</m> <m>\subseteq</m> <m>A</m>, <m>f(S)=\{f(s):s\in S\}</m>. For <m>T</m> <m>\subseteq</m> <m>B</m>, <m>f^{-1}(T)=\{a\in A:f(a)\in T\}</m>. The preimage is defined for every function; the notation does not assert that an inverse function exists.</p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>preimages preserve set operations</title>
+      <statement>
+        <p>For T,U <m>\subseteq</m> <m>B</m>, <m>f^{-1}(T</m> <m>\cup</m> <m>U)=f^{-1}(T</m>) <m>\cup</m> <m>f^{-1}(U)</m>, <m>f^{-1}(T</m> <m>\cap</m> <m>U)=f^{-1}(T</m>) <m>\cap</m> <m>f^{-1}(U)</m>, and <m>f^{-1}(B</m> <m>\setminus</m> <m>T)=A</m> <m>\setminus</m> <m>f^{-1}(T)</m>. The first two identities also hold for arbitrary nonempty indexed families.</p>
+      </statement>
+      <proof>
+        <p>An element <m>a</m> lies in the preimage of a union precisely when <m>f(a)</m> lies in at least one member of the family, equivalently a lies in at least one preimage. For intersections replace “at least one” by “every.” Finally a belongs to <m>f^{-1}(B</m> <m>\setminus</m> T) precisely when <m>f(a)</m> does not belong to <m>T</m>, equivalently a does not belong to <m>f^{-1}(T)</m>.</p>
+      </proof>
+    </theorem>
+    <example>
+      <title>images and intersections</title>
+      <p>Take <m>f:\mathbb R \to \mathbb R</m>, <m>f(x)=x^{2}</m>, <m>S=\{-1\}</m>, <m>T=\{1\}</m>. Then <m>f(S\cap T)=\varnothing</m> but <m>f(S)\cap f(T)=\{1\}</m>. Images preserve unions, but generally only satisfy <m>f(S\cap T)</m> <m>\subseteq</m> <m>f(S)\cap f(T)</m>. The loss of information comes from distinct inputs having the same output.</p>
+    </example>
+    <definition>
+      <title>injectivity, surjectivity and bijectivity</title>
+      <statement>
+        <p>A function is injective if <m>f(a)=f(a</m>′) implies <m>a=a</m>′, surjective if every <m>b\in B</m> equals <m>f(a)</m> for some <m>a\in A</m>, and bijective if both hold. For example <m>x\mapsto x^{2}</m> on <m>\mathbb R</m> is neither injective nor surjective onto <m>\mathbb R</m>; restricting domain and codomain to <m>[0,\infty</m>) makes it bijective.</p>
+      </statement>
+    </definition>
+    <definition>
+      <title>composition</title>
+      <statement>
+        <p>For <m>f:A\to B</m> and <m>g:B\to C</m>, define <m>(g\circ f)(a)=g(f(a))</m>. Composition is associative: for <m>h:C\to D</m> both <m>h\circ (g\circ f)</m> and <m>(h\circ g)\circ f</m> send a to <m>h(g(f(a)))</m>. The identity <m>id_A</m> sends a to itself.</p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>inverse functions</title>
+      <statement>
+        <p>A function <m>f:A\to B</m> is bijective if and only if there exists <m>g:B\to A</m> such that <m>g\circ f=id_A</m> and <m>f\circ g=id_B</m>. Such <m>g</m> is unique.</p>
+      </statement>
+      <proof>
+        <p>If <m>f</m> is bijective, every <m>b</m> has exactly one preimage a. Define <m>g(b)=a</m>. Both identities follow immediately. Conversely, if <m>f(a)=f(a</m>′), applying <m>g</m> gives <m>a=a</m>′. Every <m>b</m> equals <m>f(g(b))</m>, so <m>f</m> is surjective. If <m>g</m> and <m>h</m> are both inverses, <m>g=g\circ id_B=g\circ (f\circ h)=(g\circ f)\circ h=h</m>.</p>
+      </proof>
+    </theorem>
+    <remark>
+      <title>Connections</title>
+      <p>Preimages are central to continuity in topology and measurability in analysis. Composition and identity maps are the starting point of category theory. The distinction between images and preimages reappears in kernels, quotient spaces and inverse image functors.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Prove that <m>f</m> is injective if and only if <m>f(S\cap T)=f(S)\cap f(T)</m> for all subsets S,T of <m>A</m>.</p>
+        </statement>
+        <solution>
+          <p>If <m>f</m> is injective and <m>y</m> lies in both images, write <m>y=f(s)=f(t)</m>; injectivity gives <m>s=t\in S\cap T</m>. The reverse inclusion always holds. Conversely, if <m>f(a)=f(b)</m> with <m>a\ne b</m>, choose <m>S=\{a\}</m>, <m>T=\{b\}</m>. Their intersection is empty but their images intersect, contradicting the assumed equality.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Show that <m>P(A)</m> has <m>2^{n}</m> elements when <m>A</m> has <m>n</m> elements.</p>
+        </statement>
+        <solution>
+          <p>Each subset corresponds to a binary choice for each of the <m>n</m> elements, giving <m>2^{n}</m> choices.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Prove that if <m>g\circ f</m> is injective then <m>f</m> is injective.</p>
+        </statement>
+        <solution>
+          <p>If <m>f(a)=f(b)</m>, applying <m>g</m> gives <m>(g\circ f)(a)=(g\circ f)(b)</m>, so <m>a=b</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-01-lesson-02">
+    <title>Logic and proof</title>
+    <p>Mathematical proofs establish conclusions from explicit assumptions. The logical form of a statement determines what must be shown and what would refute it.</p>
+    <definition>
+      <title>propositions and connectives</title>
+      <statement>
+        <p>A proposition is a statement with a truth value. Negation ¬<m>P</m> reverses that value. <m>P</m>∧<m>Q</m> holds when both hold; <m>P</m>∨<m>Q</m> holds when at least one holds. The implication <m>P</m>⇒<m>Q</m> is false precisely when <m>P</m> is true and <m>Q</m> is false. The biconditional <m>P</m>⇔<m>Q</m> means both implications hold.</p>
+      </statement>
+    </definition>
+    <example>
+      <title>vacuous truth</title>
+      <p>The assertion that every element of <m>\varnothing</m> is positive is true: there is no element of <m>\varnothing</m> that violates the assertion. Similarly, an implication with a false hypothesis is true regardless of its conclusion. This convention makes universal statements behave consistently under restriction of domains.</p>
+    </example>
+    <definition>
+      <title>quantifiers</title>
+      <statement>
+        <p>The statement <m>\forall x\in A</m>, <m>P(x)</m> asserts <m>P</m> for every element of <m>A</m>. The statement <m>\exists x\in A</m>, <m>P(x)</m> asserts that at least one witness exists. To establish a universal statement, choose an arbitrary element; to establish an existential statement, construct a witness or prove that one must exist.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>negating quantified statements</title>
+      <statement>
+        <p>The negation of <m>\forall x\in A</m>, <m>P(x)</m> is <m>\exists x\in A</m>, ¬<m>P(x)</m>. The negation of <m>\exists x\in A</m>, <m>P(x)</m> is <m>\forall x\in A</m>, ¬<m>P(x)</m>. Also ¬(P⇒Q) is equivalent to <m>P</m>∧¬<m>Q</m>.</p>
+      </statement>
+      <proof>
+        <p>A universal assertion fails exactly when some element violates it. An existential assertion fails exactly when no element satisfies it. The implication identity follows from the single false case in the truth table for implication.</p>
+      </proof>
+    </proposition>
+    <example>
+      <title>order of quantifiers</title>
+      <p>The assertion <m>\forall x\in \mathbb R</m> <m>\exists y\in \mathbb R</m>, <m>y&gt;x</m> is true: take <m>y=x+1</m>. The assertion <m>\exists y\in \mathbb R</m> <m>\forall x\in \mathbb R</m>, <m>y&gt;x</m> is false: for any proposed <m>y</m>, choose <m>x=y</m>. The first permits the witness to depend on <m>x</m>; the second demands one witness valid for all <m>x</m>.</p>
+    </example>
+    <remark>
+      <title>direct proof</title>
+      <p>To prove <m>P</m>⇒<m>Q</m>, assume <m>P</m> and derive <m>Q</m>. For example, if integers a,b are even, write <m>a=2m</m> and <m>b=2n</m>. Then <m>a+b=2(m+n)</m>, so <m>a+b</m> is even. The argument uses arbitrary even integers rather than checking selected examples.</p>
+    </remark>
+    <remark>
+      <title>contraposition</title>
+      <p>The contrapositive of <m>P</m>⇒<m>Q</m> is ¬<m>Q</m>⇒¬<m>P</m>, which is logically equivalent to the original implication. For example, to prove that <m>n^{2}</m> even implies <m>n</m> even, suppose <m>n</m> is odd. Write <m>n=2k+1</m>. Then <m>n^{2}=2(2k^{2}+2k)+1</m> is odd.</p>
+    </remark>
+    <remark>
+      <title>contradiction</title>
+      <p>To prove <m>P</m>, assume ¬<m>P</m> and derive a contradiction. To prove <m>P</m>⇒<m>Q</m> this way, assume <m>P</m> and ¬<m>Q</m> simultaneously. Unlike contraposition, the contradiction need not be the negation of the original hypothesis.</p>
+    </remark>
+    <theorem>
+      <title>irrationality of √2</title>
+      <statement>
+        <p>There is no rational number whose square is 2.</p>
+      </statement>
+      <proof>
+        <p>Suppose <m>\sqrt{2}=a/b</m> for integers a,b with <m>b&gt;0</m> and <m>\operatorname{gcd}(a,b)=1</m>. Then <m>a^{2}=2b^{2}</m>, so <m>a^{2}</m> is even. By the parity argument above, a is even. Write <m>a=2k</m>. Substitution gives <m>b^{2}=2k^{2}</m>, so <m>b</m> is also even. Thus 2 divides both a and <m>b</m>, contradicting <m>\operatorname{gcd}(a,b)=1</m>.</p>
+      </proof>
+    </theorem>
+    <remark>
+      <title>proving equivalence and uniqueness</title>
+      <p>To prove <m>P</m>⇔<m>Q</m>, prove each implication separately. To prove that exactly one object satisfies a property, first prove existence, then show that any two objects satisfying the property coincide. For example, a group identity is unique: if <m>e</m> and <m>e</m>′ are identities, then <m>e=e</m> <m>e</m>′<m>=e</m>′.</p>
+    </remark>
+    <example>
+      <title>negating convergence</title>
+      <p>The definition <m>a_{n}\to L</m> is: for every <m>\epsilon &gt;0</m> there exists <m>N\in \mathbb N</m> such that for every <m>n\ge N</m>, <m>|a_{n}-L|&lt;\epsilon</m>. Its negation is: there exists <m>\epsilon &gt;0</m> such that for every <m>N\in \mathbb N</m> there exists <m>n\ge N</m> with <m>|a_{n}-L|\ge \epsilon</m>. The latter supplies a fixed error threshold that is violated arbitrarily late.</p>
+    </example>
+    <remark>
+      <title>reversing an implication</title>
+      <p>From “<m>n</m> divisible by 4 implies <m>n</m> even,” one cannot conclude that every even <m>n</m> is divisible by 4. The integer 6 is a counterexample. A converse must be proved independently; it is not the contrapositive.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Negate the assertion that for every real <m>x</m> there exists a positive integer <m>n</m> such that <m>n&gt;x</m>. Then prove the original assertion using the Archimedean property.</p>
+        </statement>
+        <solution>
+          <p>The negation is: there exists <m>x\in \mathbb R</m> such that every positive integer <m>n</m> satisfies <m>n\le x</m>. This says that the positive integers have a real upper bound. The Archimedean property states exactly that no such upper bound exists, proving the original assertion.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Prove that the sum of two odd integers is even.</p>
+        </statement>
+        <solution>
+          <p>Write the integers as <m>2a+1</m> and <m>2b+1</m>. Their sum is <m>2(a+b+1)</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Give a counterexample to the converse of the statement that a multiple of 6 is a multiple of 3.</p>
+        </statement>
+        <solution>
+          <p>The integer 3 is a multiple of 3 but not of 6.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-01-lesson-03">
+    <title>Equivalence relations</title>
+    <p>Many mathematical constructions identify objects that differ in an irrelevant way. Equivalence relations make such identifications precise, and quotient sets collect the resulting classes.</p>
+    <definition>
+      <title>relations</title>
+      <statement>
+        <p>A binary relation on a set <m>A</m> is a subset <m>R</m> of <m>A\times A</m>. We write <m>a\sim b</m> when <m>(a,b)\in R</m>. A relation is reflexive if <m>a\sim a</m>, symmetric if <m>a\sim b</m> implies <m>b\sim a</m>, and transitive if <m>a\sim b</m> and <m>b\sim c</m> imply <m>a\sim c</m>. An equivalence relation satisfies all three conditions.</p>
+      </statement>
+    </definition>
+    <example>
+      <title>congruence</title>
+      <p>Fix a positive integer <m>m</m>. On <m>\mathbb Z</m> define <m>a\sim b</m> if <m>m</m> divides <m>a-b</m>. Reflexivity follows from <m>m</m> dividing zero. Symmetry follows because <m>m</m> dividing <m>a-b</m> implies <m>m</m> dividing its negative. Transitivity follows by adding <m>a-b</m> and <m>b-c</m>. Hence congruence modulo <m>m</m> is an equivalence relation.</p>
+    </example>
+    <example>
+      <title>Counterexamples</title>
+      <p>The relation <m>\le</m> on <m>\mathbb R</m> is reflexive and transitive but not symmetric. The relation <m>|a-b|&lt;1</m> on <m>\mathbb R</m> is reflexive and symmetric but not transitive: 0 is related to 0.75 and 0.75 to 1.5, but 0 is not related to 1.5.</p>
+    </example>
+    <definition>
+      <title>classes and quotients</title>
+      <statement>
+        <p>For an equivalence relation on <m>A</m>, the equivalence class of <m>a</m> is <m>[a]=\{x\in A:x\sim a\}</m>. The quotient <m>A/\sim</m> is the set of all equivalence classes. The canonical projection <m>q:A\to A/\sim</m> sends a to [a].</p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>equality of classes</title>
+      <statement>
+        <p>For <m>a,b\in A</m> the following are equivalent: <m>a\sim b</m>; <m>[a]=[b]</m>; <m>[a]\cap [b]\ne \varnothing</m>.</p>
+      </statement>
+      <proof>
+        <p>If <m>a\sim b</m> and <m>x\in [a]</m>, then <m>x\sim a\sim b</m>, so <m>x\in [b]</m>. Symmetry gives the reverse inclusion. If <m>[a]=[b]</m>, reflexivity gives <m>a\in [a]\cap [b]</m>. Finally if <m>x</m> lies in both classes, then <m>a\sim x</m> by symmetry and <m>x\sim b</m>, so transitivity gives <m>a\sim b</m>.</p>
+      </proof>
+    </theorem>
+    <definition>
+      <title>partitions</title>
+      <statement>
+        <p>A partition of <m>A</m> is a collection of nonempty pairwise disjoint subsets whose union is <m>A</m>.</p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>partitions and equivalence relations</title>
+      <statement>
+        <p>Equivalence classes form a partition of <m>A</m>. Conversely every partition determines a unique equivalence relation whose classes are precisely its blocks.</p>
+      </statement>
+      <proof>
+        <p>Every a lies in [a] by reflexivity, so classes are nonempty and cover <m>A</m>. By the preceding theorem two classes that intersect must coincide. Conversely, given a partition, declare <m>a\sim b</m> if they belong to the same block. Each element lies in a unique block, so reflexivity and symmetry hold. If a,b share a block and b,c share a block, the blocks coincide because both contain <m>b</m>. Thus a,c share a block, proving transitivity. The classes are the blocks by construction, which also proves uniqueness.</p>
+      </proof>
+    </theorem>
+    <theorem>
+      <title>universal property of the quotient</title>
+      <statement>
+        <p>Let <m>f:A\to B</m>. There exists a unique function <m>F:A/\sim \to B</m> with <m>F\circ q=f</m> if and only if <m>a\sim b</m> implies <m>f(a)=f(b)</m>.</p>
+      </statement>
+      <proof>
+        <p>If <m>F</m> exists and <m>a\sim b</m>, then <m>q(a)=q(b)</m>, so <m>f(a)=F(q(a))=F(q(b))=f(b)</m>. Conversely define <m>F([a])=f(a)</m>. If <m>[a]=[b]</m>, the assumed condition gives <m>f(a)=f(b)</m>, so this definition is independent of representative. It satisfies <m>F\circ q=f</m>. Since <m>q</m> is surjective, every class is <m>q(a)</m> for some a, and any such <m>F</m> must take that class to <m>f(a)</m>. This proves uniqueness.</p>
+      </proof>
+    </theorem>
+    <example>
+      <title>rational numbers</title>
+      <p>On <m>\mathbb Z \times (\mathbb Z \setminus \{0\})</m>, define <m>(a,b)\sim (c,d)</m> if <m>ad=bc</m>. Reflexivity and symmetry are immediate. For transitivity, <m>ad=bc</m> and <m>cf=de</m> imply <m>adf=bcf=bde</m>. Since <m>d\ne 0</m>, cancel <m>d</m> to obtain <m>af=be</m>. The quotient is the underlying set of rational numbers. Addition and multiplication can be defined using representatives, but their independence of representatives must be checked separately.</p>
+    </example>
+    <proposition>
+      <title>fibers of a function</title>
+      <statement>
+        <p>Every function <m>f:A\to B</m> induces an equivalence relation <m>a\sim b</m> if <m>f(a)=f(b)</m>. The quotient <m>A/\sim</m> is canonically bijective to <m>f(A)</m>.</p>
+      </statement>
+      <proof>
+        <p>Reflexivity, symmetry and transitivity follow from equality in <m>B</m>. The universal property gives <m>F([a])=f(a)</m>, now viewed as a map to <m>f(A)</m>. It is surjective by definition of image. If <m>F([a])=F([b])</m>, then <m>f(a)=f(b)</m>, hence <m>a\sim b</m> and <m>[a]=[b]</m>. Thus <m>F</m> is injective.</p>
+      </proof>
+    </proposition>
+    <remark>
+      <title>Connections</title>
+      <p>This factorization into a quotient followed by an injection anticipates the first isomorphism theorem for groups, rings and modules. Quotient topology adds a topology to the same set-theoretic construction. Homotopy classes are another important instance.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>On <m>\mathbb R ^{2}</m> define <m>(x,y)\sim (u,v)</m> if <m>x+y=u+v</m>. Describe the classes geometrically and construct a bijection from the quotient to <m>\mathbb R</m>.</p>
+        </statement>
+        <solution>
+          <p>The relation is induced by <m>f(x,y)=x+y</m>, hence is an equivalence relation. Each class is a line <m>x+y=c</m> of slope <m>-1</m>. The map <m>[(x,y)]\mapsto x+y</m> is well-defined and injective by the definition of the relation; it is surjective since (c,0) maps to <m>c</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Find the equivalence classes modulo 4.</p>
+        </statement>
+        <solution>
+          <p>They are <m>4\mathbb Z</m>, <m>1+4\mathbb Z</m>, <m>2+4\mathbb Z</m> and <m>3+4\mathbb Z</m>, by division with remainder.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Show that the quotient projection is injective precisely when the relation is equality.</p>
+        </statement>
+        <solution>
+          <p>Injectivity implies that <m>[a]=[b]</m> forces <m>a=b</m>. Since related elements have equal classes, the relation is equality. Conversely equality gives singleton classes, so the projection is injective.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-01-lesson-04">
+    <title>Cardinality</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-01-lesson-05">
+    <title>Induction and divisibility</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

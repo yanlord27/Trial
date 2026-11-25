@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-08">
+  <title>Fields and Galois theory</title>
+  <section xml:id="course-08-lesson-01">
+    <title>Field extensions</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>For a finite Galois extension <m>L/K</m>, intermediate fields correspond contravariantly to subgroups of <m>\operatorname{Gal}(L/K)</m>.</p>
+      </statement>
+    </definition>
+    <p>Symmetries of roots reveal the structure of field extensions.</p>
+    <p><m>F</m> <m>\leftrightarrow</m> <m>\operatorname{Gal}(L/F)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The fixed field theorem and the degree formula establish inverse correspondences.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Which intermediate extensions <m>F/K</m> are Galois?</p>
+        </statement>
+        <solution>
+          <p>Exactly those whose corresponding subgroup is normal.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Fields, Groups, Covering spaces.</p>
+  </section>
+  <section xml:id="course-08-lesson-02">
+    <title>Algebraic elements</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-08-lesson-03">
+    <title>Splitting fields</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-08-lesson-04">
+    <title>Separability and normality</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-08-lesson-05">
+    <title>Galois correspondence</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-08-lesson-06">
+    <title>Solvability</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

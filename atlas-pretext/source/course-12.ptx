@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-12">
+  <title>Algebraic topology</title>
+  <section xml:id="course-12-lesson-01">
+    <title>Homotopy</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-12-lesson-02">
+    <title>Fundamental group</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p><m>\pi _{1}(X,x)</m> is the group of based loops modulo based homotopy.</p>
+      </statement>
+    </definition>
+    <p>A loop records a hole when it cannot be continuously contracted.</p>
+    <p><m>\pi _{1}(S^{1})</m> <m>\cong</m> <m>Z</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Lift loops to <m>R</m> under <m>t</m> <m>\mapsto</m> <m>\operatorname{exp}(2\pi it)</m>; the endpoint displacement is an integer and classifies the loop.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What is <m>\pi _{1}(S^{1}</m> ∨ <m>S^{1}</m>)?</p>
+        </statement>
+        <solution>
+          <p>The free group on two generators, by van Kampen.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Groups, Covering spaces, Homology.</p>
+  </section>
+  <section xml:id="course-12-lesson-03">
+    <title>Van Kampen theorem</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-12-lesson-04">
+    <title>Covering spaces</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A covering map locally looks like a disjoint union of copies of the base.</p>
+      </statement>
+    </definition>
+    <p>A path downstairs has a unique lift once its starting sheet is chosen.</p>
+    <p><m>p</m>: <m>R</m> <m>\to</m> <m>S^{1}</m>,  <m>t</m> <m>\mapsto</m> <m>\operatorname{exp}(2\pi it)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Subdivide a compact path into intervals mapping into evenly covered neighborhoods, then lift successively.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When does a based connected cover correspond to a normal subgroup?</p>
+        </statement>
+        <solution>
+          <p>When its subgroup of <m>\pi _{1}</m> is normal; for standard <m>covering-space</m> hypotheses this is equivalent to a regular cover.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Fundamental group, Galois theory, Manifolds.</p>
+  </section>
+  <section xml:id="course-12-lesson-05">
+    <title>Deck transformations</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-12-lesson-06">
+    <title>CW complexes</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-12-lesson-07">
+    <title>Singular homology</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-17">
+  <title>Algebraic geometry</title>
+  <section xml:id="course-17-lesson-01">
+    <title>Affine varieties</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>An affine algebraic set is the common zero locus of polynomials; an affine variety is often required to be irreducible.</p>
+      </statement>
+    </definition>
+    <p>Geometry is encoded by the ring of polynomial functions on the space.</p>
+    <p><m>k[X]=k[x_{1}</m>,…<m>,x_{n}]/I(X)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Restriction of polynomials to <m>X</m> has kernel <m>I(X)</m>, giving the coordinate ring.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When is an affine algebraic set irreducible?</p>
+        </statement>
+        <solution>
+          <p>Exactly when its vanishing ideal is prime.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Nullstellensatz, Rings, Cubic surfaces.</p>
+  </section>
+  <section xml:id="course-17-lesson-02">
+    <title>Nullstellensatz</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>Over an algebraically closed field, <m>I(V(I))=\sqrt{I}</m> for ideals in a polynomial ring.</p>
+      </statement>
+    </definition>
+    <p>Polynomial equations and their geometric zero sets determine one another up to radical.</p>
+    <p><m>I(V(I))=\sqrt{I}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The weak Nullstellensatz plus the Rabinowitsch trick proves the strong form.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why do (x) and <m>(x^{2})</m> define the same zero set?</p>
+        </statement>
+        <solution>
+          <p>They have the same radical.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Rings, Fields, Affine varieties.</p>
+  </section>
+  <section xml:id="course-17-lesson-03">
+    <title>Projective varieties</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-17-lesson-04">
+    <title>Tangent spaces of varieties</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-17-lesson-05">
+    <title>Cubic surfaces</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A smooth cubic surface in projective 3-space over an algebraically closed field contains exactly 27 lines.</p>
+      </statement>
+    </definition>
+    <p>A highly curved algebraic surface can contain a rigid finite configuration of straight lines.</p>
+    <p>27 lines; each meets 10 others</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>One approach uses the description as the <m>blow-up</m> of <m>P^{2}</m> at six points in general position: six exceptional curves, fifteen transforms of lines and six transforms of conics.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>How many lines are disjoint from a given line?</p>
+        </statement>
+        <solution>
+          <p>16, since the other 26 include 10 meeting it.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Affine varieties, Manifolds.</p>
+  </section>
+</chapter>

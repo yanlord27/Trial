@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-11">
+  <title>Measure and functional analysis</title>
+  <section xml:id="course-11-lesson-01">
+    <title>Measure and integration</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A measure is a countably additive nonnegative set function on a sigma algebra.</p>
+      </statement>
+    </definition>
+    <p>Measure extends length or volume to a flexible notion of size. Integration accumulates weighted size.</p>
+    <p><m>\int</m> <m>f</m> <m>d\mu</m> <m>=</m> sup <m>\int</m> <m>s</m> <m>d\mu</m>  (0 <m>\le</m> <m>s</m> <m>\le</m> <m>f</m>, <m>s</m> simple)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Define the integral first for nonnegative simple functions, then take the supremum and extend to integrable signed functions.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Can a nonempty set have measure zero?</p>
+        </statement>
+        <solution>
+          <p>Yes: a singleton in <m>R</m> has Lebesgue measure zero.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Convergence, Hilbert spaces.</p>
+  </section>
+  <section xml:id="course-11-lesson-02">
+    <title>Convergence</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>Pointwise, uniform, in-measure and <m>L^{p}</m> convergence capture different notions of approximation.</p>
+      </statement>
+    </definition>
+    <p>Pointwise convergence controls each point eventually; norm convergence controls aggregate error.</p>
+    <p><m>\Vert f_{n}</m> <m>-</m> <m>f\Vert _{p}</m> <m>\to</m> 0</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Markov’s inequality gives <m>\mu (|f_{n}-f|&gt;\epsilon )</m> <m>\le</m> <m>\Vert f_{n}-f\Vert _{p}^{p}/\epsilon ^{p}</m>, proving <m>L^{p}</m> convergence implies convergence in measure.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Does pointwise convergence imply <m>L^{1}</m> convergence?</p>
+        </statement>
+        <solution>
+          <p>No: <m>f_{n}=n\cdot 1_(0,1/n)</m> converges pointwise to zero on (0,1), but its integral is one.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Measure and integration, Hilbert spaces.</p>
+  </section>
+  <section xml:id="course-11-lesson-03">
+    <title>Lp spaces</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-11-lesson-04">
+    <title>Banach spaces</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-11-lesson-05">
+    <title>Hilbert spaces</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A Hilbert space is a complete inner product space.</p>
+      </statement>
+    </definition>
+    <p>Euclidean geometry survives in infinite dimensions, including orthogonal projection.</p>
+    <p><m>\Vert x\Vert ^{2}</m> <m>=</m> <m>\langle x,x\rangle</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>For a closed subspace, a minimizing sequence for distance is Cauchy by the parallelogram identity; its limit is the unique nearest point.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is the closed unit ball of <m>\ell ^{2}</m> not norm compact?</p>
+        </statement>
+        <solution>
+          <p>The standard basis has pairwise distance <m>\sqrt{2}</m>, so has no convergent subsequence.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Convergence, Dual spaces, Riemannian metrics.</p>
+  </section>
+</chapter>

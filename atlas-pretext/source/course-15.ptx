@@ -1,0 +1,800 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-15">
+  <title>Riemannian geometry</title>
+  <section xml:id="course-15-lesson-01">
+    <title>Riemannian metrics</title>
+    <p>A metric equips each tangent space with Euclidean geometry. Lecture notes: 7530–7532. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>metric</title>
+      <statement>
+        <p>A Riemannian metric is a smooth symmetric positive definite covariant two-tensor <m>g</m>. In coordinates, <me>g=g_{ij}dx^i\otimes dx^j,\qquad g_{ij}=g(\partial_i,\partial_j).</me> Repeated indices are summed. The inverse matrix is denoted by <m>g^{ij}</m>.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>existence</title>
+      <statement>
+        <p>Every smooth manifold admits a Riemannian metric.</p>
+      </statement>
+      <proof>
+        <p>Choose a locally finite coordinate cover and subordinate partition of unity <m>\rho _{a}</m>. Pull back the Euclidean metric in each chart to obtain <m>g_{a}</m>. Then <m>g=\sum \rho _{a}g_{a}</m> is smooth and positive definite, since at every point at least one weight is positive.</p>
+      </proof>
+    </proposition>
+    <definition>
+      <title>pullback and isometry</title>
+      <statement>
+        <p>For a smooth map <m>F</m>, <me>(F^*h)_p(v,w)=h_{F(p)}(dF_pv,dF_pw).</me> If <m>F</m> is an immersion this is positive definite. An isometry is a diffeomorphism satisfying <m>F*g_{2}=g_{1}</m>. A local isometry satisfies this locally. A metric is flat if locally isometric to Euclidean space.</p>
+      </statement>
+    </definition>
+    <example>
+      <title>cylinder</title>
+      <p>For <m>F(u,v)=(\operatorname{cos}</m> u,sin u,v), the induced metric is <m>du^{2}+dv^{2}</m>. Indeed <m>F_{u}</m> and <m>F_{v}</m> are orthonormal. Thus a cylinder is intrinsically flat despite its visible bending.</p>
+    </example>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Compute the metric of a radius a cylinder.</p>
+        </statement>
+        <solution>
+          <p><m>a^{2}du^{2}+dv^{2}</m>; set <m>x=au</m> locally.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Why does a nonimmersive map fail to pull back a metric?</p>
+        </statement>
+        <solution>
+          <p>A nonzero vector in the kernel of dF has zero squared length.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Connections, Geodesics, Curvature, Hilbert spaces.</p>
+  </section>
+  <section xml:id="course-15-lesson-02">
+    <title>Riemannian distance</title>
+    <p>The metric turns infinitesimal lengths into a distance. Lecture notes: 7533. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>length and distance</title>
+      <statement>
+        <p><me>L_g(\gamma)=\int_a^b |\dot\gamma|_g\,dt,\qquad d_g(p,q)=\inf_{\gamma:p\to q}L_g(\gamma).</me> Use piecewise smooth curves on a connected manifold. Length is invariant under orientation-preserving reparametrization.</p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>metric topology</title>
+      <statement>
+        <p>The Riemannian distance is a metric inducing the manifold topology.</p>
+      </statement>
+      <proof>
+        <p>Symmetry follows by reversing curves; concatenation gives the triangle inequality. In a relatively compact coordinate ball centered at <m>p</m>, positive definiteness and compactness give constants <m>c,C&gt;0</m> with <m>c|v|\le |v|g\le C|v|</m>. A curve leaving the ball of radius <m>r</m> costs at least cr. A curve remaining inside costs at least <m>c</m> times the Euclidean displacement. Straight segments give the upper bound <m>C|x(q)|</m>. These estimates establish separation and equality of the two topologies.</p>
+      </proof>
+    </theorem>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Show that multiplying <m>g</m> by a positive constant <m>\lambda</m> scales distance by <m>\sqrt{} \lambda</m>.</p>
+        </statement>
+        <solution>
+          <p>Every curve length scales by <m>\sqrt{} \lambda</m>, hence so does the infimum.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-03">
+    <title>Connections</title>
+    <p>A connection compares vectors in distinct fibers by prescribing differentiation. Lecture notes: 7534–7535. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>connection on a vector bundle</title>
+      <statement>
+        <p>A connection <m>\nabla</m> on <m>E</m> is a map from vector fields and sections to sections, <m>C^\infty</m>-linear in the first input, real-linear in the second, with <me>\nabla_X(fs)=X(f)s+f\nabla_Xs.</me> Consequently its first input is pointwise, but its second input is not.</p>
+      </statement>
+    </definition>
+    <definition>
+      <title>coefficients</title>
+      <statement>
+        <p>For a tangent connection, <me>\nabla_{\partial_i}\partial_j=\Gamma^k_{ij}\partial_k,\qquad (\nabla_XY)^k=X^i\partial_iY^k+X^iY^j\Gamma^k_{ij}.</me></p>
+      </statement>
+    </definition>
+    <definition>
+      <title>induced connections</title>
+      <statement>
+        <p>On functions <m>\nabla _{x}f=Xf</m>. On covectors, <me>(\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY).</me> Extend by the tensor product Leibniz rule and compatibility with contraction. For a covariant two-tensor <m>A</m>, <m>(\nabla _{x}A)(Y,Z)=X(A(Y,Z))-A(\nabla _{x}Y,Z)-A(Y,\nabla _{x}Z)</m>.</p>
+      </statement>
+    </definition>
+    <remark>
+      <title>not a tensor</title>
+      <p>The extra <m>X(f)Y</m> term prevents <m>\nabla</m> from being a tensor. The difference of two connections is a tensor, since the extra terms cancel.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Prove that the difference of connections is <m>C\infty -bilinear</m>.</p>
+        </statement>
+        <solution>
+          <p>Subtract their Leibniz identities in the second slot; the first slot is already <m>C^\infty</m>-linear.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Vector bundles, Riemannian metrics, Geodesics, Curvature.</p>
+  </section>
+  <section xml:id="course-15-lesson-04">
+    <title>Levi-Civita connection</title>
+    <p>The metric determines a unique natural connection. Lecture notes: 7536–7538. Proof details and exercises are expanded for Atlas.</p>
+    <theorem>
+      <title>fundamental theorem</title>
+      <statement>
+        <p>There is a unique connection satisfying torsion freeness <m>\nabla _{x}Y-\nabla</m>ᵧ<m>X=[X,Y]</m> and metric compatibility <m>\nabla g=0</m>, equivalently <m>Xg(Y,Z)=g(\nabla _{x}Y,Z)+g(Y,\nabla _{x}Z)</m>.</p>
+      </statement>
+      <proof>
+        <p>In coordinates torsion freeness gives <m>\Gamma ^{k}_{ij}=\Gamma ^{k}_{ji}</m>. Metric compatibility gives <m>\partial _{i}g_{jl}=g_{kl}\Gamma ^{k}_{ij}+g_{jk}\Gamma ^{k}_{il}</m>. Add the equations with i,j exchanged and subtract the equation with derivative <m>l</m>. Thus <me>\Gamma^k_{ij}=\tfrac12 g^{k\ell}(\partial_i g_{j\ell}+\partial_j g_{i\ell}-\partial_\ell g_{ij}).</me> These coefficients define a connection locally satisfying both conditions by substitution. Uniqueness makes the local connections agree on overlaps.</p>
+      </proof>
+    </theorem>
+    <proposition>
+      <title>embedded manifolds</title>
+      <statement>
+        <p>For the induced metric on a submanifold of Euclidean space, <m>\nabla _{x}Y=(D_{x}Y)</m>ᵀ.</p>
+      </statement>
+      <proof>
+        <p>Projection preserves the connection axioms. The ambient derivative is torsion free, and [X,Y] is tangent. Differentiating the ambient inner product gives metric compatibility because normal components are orthogonal to tangent vectors. Apply uniqueness.</p>
+      </proof>
+    </proposition>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Find the Christoffel symbols of <m>dr^{2}+r^{2}d\theta ^{2}</m>.</p>
+        </statement>
+        <solution>
+          <p><m>\Gamma ^{r}\theta \theta =-r</m>, <m>\Gamma \theta _{r}\theta =\Gamma \theta \theta _{r}=1/r</m>; all others vanish.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-05">
+    <title>Geodesics</title>
+    <p>A geodesic is a curve whose velocity does not turn intrinsically. Lecture notes: 7539–7541. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>geodesic</title>
+      <statement>
+        <p><me>\nabla_{\dot\gamma}\dot\gamma=0.</me> For an embedded manifold this means ambient acceleration is normal.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>constant speed</title>
+      <statement>
+        <p>Metric compatibility gives <m>d|\gamma</m>′<m>|^{2}/dt=2g(\nabla \gamma</m>′<m>\gamma</m>′<m>,\gamma</m>′<m>)=0</m>.</p>
+      </statement>
+    </proposition>
+    <theorem>
+      <title>initial value problem</title>
+      <statement>
+        <p>In coordinates, <me>\ddot x^k+\Gamma^k_{ij}\dot x^i\dot x^j=0.</me> This is a smooth first-order system in (x,v), with <m>x</m>′<m>=v</m> and <m>v</m>′<m>^{k}=-\Gamma ^{k}_{ij}v^{i}v^{j}</m>. ODE existence and uniqueness give a unique maximal geodesic for each initial point and velocity.</p>
+      </statement>
+    </theorem>
+    <example>
+      <title>sphere</title>
+      <p>A great circle <m>\gamma (t)=(\operatorname{cos}</m> t,sin t,0) on the unit sphere satisfies <m>\gamma</m>″<m>=-\gamma</m>, which is normal. Thus it is a geodesic.</p>
+    </example>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Are all constant-speed curves geodesics?</p>
+        </statement>
+        <solution>
+          <p>No. A Euclidean circle has constant speed but nonzero acceleration.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Connections, Curvature, Riemannian metrics.</p>
+  </section>
+  <section xml:id="course-15-lesson-06">
+    <title>First variation of length</title>
+    <p>Geodesics are stationary curves for length under fixed-endpoint variations. Lecture notes: 7542–7543. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>variation</title>
+      <statement>
+        <p>Let <m>F(s,t)=\gamma _{s}(t)</m>, <m>T=\partial _{t}F</m> and <m>S=\partial _{s}F</m>. Torsion freeness implies <m>\nabla _{s}T=\nabla _{t}S</m>. Fixed endpoints imply <m>S</m> vanishes at both ends.</p>
+      </statement>
+    </definition>
+    <theorem>
+      <title>first variation</title>
+      <statement>
+        <p>For a constant-speed regular base curve of speed <m>c</m>, <me>L'(0)=c^{-1}[g(S,T)]_a^b-c^{-1}\int_a^b g(S,\nabla_tT)\,dt.</me></p>
+      </statement>
+      <proof>
+        <p>Differentiate the norm under the integral to get <m>c^{-1}\int g(\nabla _{s}T,T)</m>. Exchange derivatives by torsion freeness and integrate by parts using metric compatibility.</p>
+      </proof>
+    </theorem>
+    <corollary>
+      <statement>
+        <p>For fixed endpoints, stationarity for every variation is equivalent to the geodesic equation. For the converse choose a variation field supported inside the interval and proportional to <m>\nabla _{t}T</m>; the integral forces that acceleration to vanish.</p>
+      </statement>
+    </corollary>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is constant speed needed for this form?</p>
+        </statement>
+        <solution>
+          <p>It allows <m>1/|T|</m> to be taken outside the integral. For arbitrary speed the derivative acts on the unit tangent instead.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-07">
+    <title>Exponential map</title>
+    <p>The exponential map converts initial velocities into endpoints. Lecture notes: 7544–7545. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <statement>
+        <p>Let <m>\gamma _{v}</m> be the geodesic starting at <m>p</m> with velocity <m>v</m>. Define <m>exp_{p}(v)=\gamma _{v}(1)</m> on the open star-shaped domain where the geodesic exists through time 1.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>scaling</title>
+      <statement>
+        <p><m>\gamma _{av}(t)=\gamma _{v}(at)</m> wherever both sides are defined, by uniqueness of the geodesic equation.</p>
+      </statement>
+    </proposition>
+    <theorem>
+      <title>normal chart</title>
+      <statement>
+        <p>The differential of <m>exp_{p}</m> at zero is the identity under <m>T_{0}(T_{p}M)\cong T_{p}M</m>. Indeed <m>exp_{p}(tv)=\gamma _{v}(t)</m>, whose derivative at zero is <m>v</m>. The inverse function theorem gives a local diffeomorphism. Choose an orthonormal basis of <m>T_{p}M</m> to obtain normal coordinates.</p>
+      </statement>
+    </theorem>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Compute <m>exp_{p}</m> on Euclidean space.</p>
+        </statement>
+        <solution>
+          <p><m>exp_{p}(v)=p+v</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-08">
+    <title>Normal coordinates and Gauss lemma</title>
+    <p>Normal coordinates make radial geodesics straight and the metric Euclidean to first order. Lecture notes: 7546–7547. Proof details and exercises are expanded for Atlas.</p>
+    <proposition>
+      <statement>
+        <p>At the origin of normal coordinates, <m>g_{ij}=\delta _{ij}</m>, <m>\Gamma ^{k}_{ij}=0</m> and <m>\partial _{k}g_{ij}=0</m>.</p>
+      </statement>
+      <proof>
+        <p>Radial lines tv are geodesics, so <m>\Gamma ^{k}_{ij}(0)v^{i}v^{j}=0</m> for every <m>v</m>. Symmetry and polarization force all coefficients to vanish. Metric compatibility then forces the first derivatives of <m>g</m> to vanish.</p>
+      </proof>
+    </proposition>
+    <theorem>
+      <title>Gauss lemma</title>
+      <statement>
+        <p>Radial geodesics are orthogonal to the images under <m>exp_{p}</m> of tangent spheres.</p>
+      </statement>
+      <proof>
+        <p>For <m>F(s,t)=exp_{p}(tv(s))</m>, take <m>|v(s)|</m> constant. Then <m>\partial _{t}g(S,T)=g(\nabla _{t}S,T)=g(\nabla _{s}T,T)=</m>½<m>\partial _{s}|T|^{2}=0</m>. At <m>t=0</m>, <m>S=0</m>, so <m>g(S,T)=0</m> everywhere.</p>
+      </proof>
+    </theorem>
+    <corollary>
+      <title>local minimization</title>
+      <statement>
+        <p>In a sufficiently small normal ball, the radial coordinate <m>r</m> satisfies <m>|\gamma</m>′<m>|\ge |r</m>′| by Gauss lemma. Integrating shows that the radial geodesic from the center minimizes length; equality forces radial motion without backtracking. Curves leaving a larger normal ball cannot shorten the radial segment.</p>
+      </statement>
+    </corollary>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why does <m>\Gamma (p)=0</m> not imply flatness?</p>
+        </statement>
+        <solution>
+          <p>It holds at a single point in normal coordinates on every Riemannian manifold.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-09">
+    <title>Parallel transport</title>
+    <p>Parallel transport identifies tangent spaces along a chosen curve. Lecture notes: 7548–7549. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <statement>
+        <p>A field <m>V</m> along <m>\gamma</m> is parallel if <m>\nabla _{t}V=0</m>. In coordinates this is the linear ODE <me>\dot V^k+\Gamma^k_{ij}(\gamma)\dot\gamma^iV^j=0.</me></p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>Existence and uniqueness give a linear isomorphism <m>P</m> from the initial tangent space to the final one. Its inverse is transport along the reversed curve. Metric compatibility gives <m>d</m> <m>g(V,W)/dt=0</m> for parallel fields, so <m>P</m> is an isometry.</p>
+      </statement>
+    </proposition>
+    <remark>
+      <title>path dependence</title>
+      <p>Transport along different curves can yield different vectors at the same endpoint. On a flat coordinate neighborhood constant coordinate fields are parallel. Curvature is the obstruction to constructing such a parallel frame locally.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Show that parallel transport preserves angles.</p>
+        </statement>
+        <solution>
+          <p>It preserves inner products and norms by metric compatibility.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-10">
+    <title>Curvature</title>
+    <p>Curvature detects the failure of covariant differentiation to commute. Lecture notes: 7550–7551. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>convention</title>
+      <statement>
+        <p><me>R(X,Y)Z=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z.</me> Write <m>R(X,Y,Z,W)=g(R(X,Y)Z,W)</m>.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>tensoriality</title>
+      <statement>
+        <p><m>R</m> is <m>C^\infty</m>-linear in X,Y,Z.</p>
+      </statement>
+      <proof>
+        <p>In the <m>Y</m> slot, use <m>[X,fY]=f[X,Y]+X(f)Y</m>; the extra <m>X(f)\nabla_Y Z</m> cancels. Skew symmetry gives the <m>X</m> slot. In the <m>Z</m> slot, expanding both double derivatives cancels the first derivative terms, leaving <m>(XYf-YXf-[X,Y]f)Z=0</m>.</p>
+      </proof>
+    </proposition>
+    <proposition>
+      <title>coordinates</title>
+      <statement>
+        <p><me>R^\ell_{ijk}=\partial_i\Gamma^\ell_{jk}-\partial_j\Gamma^\ell_{ik}+\Gamma^m_{jk}\Gamma^\ell_{im}-\Gamma^m_{ik}\Gamma^\ell_{jm},\qquad R_{ijkp}=g_{p\ell}R^\ell_{ijk}.</me></p>
+      </statement>
+    </proposition>
+    <theorem>
+      <title>flatness</title>
+      <statement>
+        <p>A metric is locally Euclidean if and only if <m>R=0</m>. Forward: Euclidean coordinates have zero coefficients, hence zero curvature in every chart. Reverse (expanded proof sketch): the linear PDE for a parallel frame has compatibility condition <m>R=0</m>. Locally solve it on a small simply connected coordinate box. Choose orthonormal initial data; metric compatibility preserves it. Torsion freeness makes the frame commute, so simultaneous straightening gives coordinates with <m>g_{ij}=\delta _{ij}</m>.</p>
+      </statement>
+    </theorem>
+    <remark>
+      <title>Proof — tensoriality in the third slot</title>
+      <p>Expand <m>\nabla_X\nabla_Y(fZ)</m> using the Leibniz rule. The terms involving first derivatives of <m>f</m> cancel against those from the reversed expression. The remaining extra term is <m>(XYf-YXf-[X,Y]f)Z=0</m>. Hence <m>R(X,Y)(fZ)=fR(X,Y)Z</m>. Together with linearity in the first two slots, this proves pointwise dependence.</p>
+    </remark>
+    <proposition>
+      <title>coordinate formula</title>
+      <statement>
+        <p>Writing <m>R(\partial_i,\partial_j)\partial_k=R^\ell_{ijk}\partial_\ell</m>, we obtain <me>R^\ell_{ijk}=\partial_i\Gamma^\ell_{jk}-\partial_j\Gamma^\ell_{ik}+\Gamma^m_{jk}\Gamma^\ell_{im}-\Gamma^m_{ik}\Gamma^\ell_{jm}.</me> Indeed the coordinate fields commute, so the bracket term vanishes; expand each of the two iterated derivatives by Leibniz.</p>
+      </statement>
+    </proposition>
+    <example>
+      <title>polar coordinates</title>
+      <p>On the punctured Euclidean plane <m>g=dr^2+r^2d\theta^2</m>. The nonzero coefficients are <m>\Gamma^r_{\theta\theta}=-r</m> and <m>\Gamma^\theta_{r\theta}=\Gamma^\theta_{\theta r}=1/r</m>. Thus <m>R^r_{r\theta\theta}=-1-(-r)(1/r)=0</m>. Nonzero Christoffel symbols do not imply curvature.</p>
+    </example>
+    <remark>
+      <title>infinitesimal holonomy</title>
+      <p>Parallel transport around a small coordinate rectangle generally fails to return a vector to itself. The leading discrepancy is proportional to its area and is governed by <m>R</m> (the sign depends on the orientation of traversal). Curvature is therefore the obstruction to path-independent local parallel transport.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why can <m>\Gamma</m> be nonzero in flat space?</p>
+        </statement>
+        <solution>
+          <p>Christoffel symbols are not tensor components; polar coordinates provide an example.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Why is the bracket correction necessary?</p>
+        </statement>
+        <solution>
+          <p>Without it the third-slot expansion leaves <m>(XYf-YXf)Z</m>, which need not vanish.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Show that a constant rescaling of <m>g</m> leaves the curvature endomorphism unchanged.</p>
+        </statement>
+        <solution>
+          <p>The Christoffel formula has one inverse metric factor and one metric derivative factor; the constants cancel. The connection and its curvature endomorphism are unchanged.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Connections, Geodesics, Riemannian metrics.</p>
+  </section>
+  <section xml:id="course-15-lesson-11">
+    <title>Curvature identities</title>
+    <p>The curvature tensor has symmetries that dramatically reduce its independent components. Lecture notes: 7551–7553. Proof details and exercises are expanded for Atlas.</p>
+    <theorem>
+      <title>algebraic symmetries</title>
+      <statement>
+        <p><me>R(X,Y,Z,W)=-R(Y,X,Z,W)=-R(X,Y,W,Z).</me> Also <m>R(X,Y,Z,W)=R(Z,W,X,Y)</m>, and the first Bianchi identity is <m>R(X,Y)Z+R(Y,Z)X+R(Z,X)Y=0</m>.</p>
+      </statement>
+      <proof>
+        <p>First skew symmetry is immediate. For the last pair apply <m>XY-YX-[X,Y]</m> to <m>g(Z,W)</m>, expand by metric compatibility, and cancel cross terms; the result is <m>g(R(X,Y)Z,W)+g(Z,R(X,Y)W)=0</m>. For Bianchi choose constant coordinate extensions at the point; the brackets vanish and torsion freeness gives <m>\nabla _{x}Y=\nabla</m>ᵧ<m>X</m>, so the six double derivatives cancel in pairs. Pair interchange follows algebraically from these three identities.</p>
+      </proof>
+    </theorem>
+    <theorem>
+      <title>differential Bianchi identity</title>
+      <statement>
+        <p><me>(\nabla_XR)(Y,Z)+(\nabla_YR)(Z,X)+(\nabla_ZR)(X,Y)=0.</me> Equivalently <m>d\nabla R=0</m> for the <m>\operatorname{End}(TM)-valued</m> two-form <m>R</m>; this is a covariant exterior derivative, not the ordinary exterior derivative of scalar forms.</p>
+      </statement>
+    </theorem>
+    <remark>
+      <title>Proof — supplementary</title>
+      <p>At a point choose normal coordinate fields. The connection coefficients vanish there. Apply the Jacobi identity for commutators of the three covariant derivative operators; coordinate brackets vanish, and each inner commutator is curvature. The resulting identity at the point is the displayed cyclic sum.</p>
+    </remark>
+    <remark>
+      <title>Proof — skew-adjointness</title>
+      <p>Metric compatibility implies <me>XYg(Z,W)=g(\nabla_X\nabla_Y Z,W)+g(\nabla_Y Z,\nabla_X W)+g(\nabla_X Z,\nabla_Y W)+g(Z,\nabla_X\nabla_Y W).</me> Subtract the expression with <m>X</m> and <m>Y</m> exchanged, then subtract <m>[X,Y]g(Z,W)</m>. The mixed terms cancel, and the left side is zero. This gives <m>g(R(X,Y)Z,W)+g(Z,R(X,Y)W)=0</m>.</p>
+    </remark>
+    <remark>
+      <title>Proof — first Bianchi identity</title>
+      <p>By tensoriality extend the three vectors at a point to constant coordinate fields. They commute, and torsion freeness gives <m>\nabla_XY=\nabla_YX</m>. In the cyclic sum of <m>\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ</m>, each positive term cancels a negative term.</p>
+    </remark>
+    <remark>
+      <title>second Bianchi identity</title>
+      <p>As an endomorphism-valued two-form, curvature satisfies <m>d^\nabla R=0</m>. This is the covariant exterior derivative, not the ordinary componentwise exterior derivative in an arbitrary frame. In a local frame with connection matrix <m>A</m>, <m>R=dA+A\wedge A</m>; expanding <m>dR+A\wedge R-R\wedge A</m> gives zero.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is <m>R(X,Y)</m> skew-adjoint?</p>
+        </statement>
+        <solution>
+          <p>The last-pair skew symmetry says precisely <m>g(R(X,Y)Z,W)=-g(Z,R(X,Y)W)</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Why does <m>R(X,Y,Z,Z)=0</m>?</p>
+        </statement>
+        <solution>
+          <p>Skew symmetry in the last two slots gives a scalar equal to its negative.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>How many independent curvature components are there in dimension two?</p>
+        </statement>
+        <solution>
+          <p>One: skew symmetry in both pairs forces every possibly nonzero component to be <m>\pm R_{1221}</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-12">
+    <title>Taylor expansion of the metric</title>
+    <p>Curvature is the first intrinsic deviation from the Euclidean metric in normal coordinates. Lecture notes: 7553–7554. Proof details and exercises are expanded for Atlas.</p>
+    <theorem>
+      <statement>
+        <p>With the lecture convention, <me>g_{ij}(x)=\delta_{ij}+\tfrac13 R_{aibj}(0)x^ax^b+O(|x|^3).</me></p>
+      </statement>
+      <proof>
+        <p>Take constant coordinate fields Y,Z. Along the radial line generated by <m>X</m>, <m>\nabla _{x}X=0</m>, hence at the origin <m>\nabla _{x}\nabla _{x}X=0</m>. Substitute <m>X=Y+sZ</m> and compare the coefficient of <m>s</m>: <m>\nabla</m>𝓏<m>\nabla</m>ᵧ<m>Y+2\nabla</m>ᵧ<m>\nabla</m>ᵧ<m>Z=0</m>, using torsion freeness. Thus <m>R(Y,Z)Y=3\nabla</m>ᵧ<m>\nabla</m>ᵧ<m>Z</m> at the origin. Metric compatibility gives <m>YYg(Z,Z)=2g(\nabla</m>ᵧ<m>\nabla</m>ᵧ<m>Z,Z)+2|\nabla</m>ᵧ<m>Z|^{2}=</m>⅔<m>R(Y,Z,Y,Z)</m> there. Taylor expansion along tY and polarization in <m>Z</m> give the formula.</p>
+      </proof>
+    </theorem>
+    <remark>
+      <title>Interpretation</title>
+      <p>The constant term is Euclidean, the linear term can always be removed by normal coordinates, and the quadratic term encodes curvature. On a sphere, tangential distances transverse to a radial direction shrink relative to the Euclidean prediction.</p>
+    </remark>
+    <remark>
+      <title>Proof — polarization in normal coordinates</title>
+      <p>Let Y,Z be constant coordinate fields. At the origin <m>\nabla_X\nabla_XX=0</m> for every constant <m>X</m> because radial lines are geodesics. Substitute <m>X=Y+sZ</m> and compare coefficients of <m>s</m>: <me>\nabla_Z\nabla_YY+2\nabla_Y\nabla_YZ=0.</me> Since the fields commute and torsion vanishes, <m>R(Y,Z)Y=3\nabla_Y\nabla_YZ</m> at the origin. Metric compatibility and vanishing Christoffel symbols there give <me>YYg(Z,Z)=2g(\nabla_Y\nabla_YZ,Z)=\tfrac23R(Y,Z,Y,Z).</me> Taylor expansion along tY and polarization in <m>Z</m> now give <m>g_{ij}(x)=\delta_{ij}+\tfrac13 R_{aibj}(0)x^ax^b+O(|x|^3)</m>.</p>
+    </remark>
+    <remark>
+      <title>what coordinates cannot remove</title>
+      <p>At a point we can normalize the metric and eliminate its first derivatives. The quadratic correction in normal coordinates records intrinsic curvature. A positively curved surface has smaller transverse metric coefficients than the Euclidean plane in radial normal coordinates.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is the coefficient positive in the displayed formula even for a sphere?</p>
+        </statement>
+        <solution>
+          <p>The ordering <m>R(Y,Z,Y,Z)</m> is negative for orthonormal Y,Z on a positively curved sphere.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>For constant sectional curvature <m>K</m>, find the quadratic term.</p>
+        </statement>
+        <solution>
+          <p><m>R_{aibj}x^ax^b=K(x_ix_j-|x|^2\delta_{ij})</m>, by the constant curvature formula.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-13">
+    <title>Second variation of length</title>
+    <p>The second derivative distinguishes stationary geodesics from locally minimizing ones. Lecture notes: 7555–7556. Proof details and exercises are expanded for Atlas.</p>
+    <theorem>
+      <title>index form</title>
+      <statement>
+        <p>For a unit-speed geodesic <m>\gamma</m> on [0,L] and a fixed-endpoint variation with constant speed on each varied curve, <me>L''(0)=\int_0^L (|\nabla_tS|^2-R(S,T,T,S))\,dt.</me></p>
+      </statement>
+      <proof>
+        <p>Set <m>E(s)=\int |T|^{2}</m>. Then <m>E</m>′<m>=-2\int g(S,\nabla _{t}T)</m> by the first variation calculation. At <m>s=0</m> the acceleration vanishes, so <m>E</m>″<m>=-2\int g(S,\nabla _{s}\nabla _{t}T)</m>. Commute derivatives: <m>\nabla _{s}\nabla _{t}T=\nabla _{t}\nabla _{t}S+R(S,T)T</m>. Integrate by parts; the boundary term vanishes. This gives <m>E</m>″<m>=2\int (|\nabla _{t}S|^{2}-R(S,T,T,S))</m>. Since <m>L(s)=\sqrt{} (LE(s))</m>, <m>E(0)=L</m> and <m>E</m>′<m>(0)=0</m>, we get <m>L</m>″<m>(0)=E</m>″<m>(0)/2</m>.</p>
+      </proof>
+    </theorem>
+    <remark>
+      <p>For arbitrary variations the length formula uses the normal component of <m>S</m>. The energy formula above does not require constant speed of the varied curves.</p>
+    </remark>
+    <remark>
+      <title>Proof — energy calculation</title>
+      <p>For a fixed-endpoint variation <m>F(s,t)</m>, write <m>S=\partial_sF</m>, <m>T=\partial_tF</m>. Torsion freeness gives <m>D_sT=D_tS</m>. With <m>E=\tfrac12\int |T|^2dt</m>, integration by parts gives <m>E\prime=-\int g(S,D_tT)dt</m>. At a geodesic <m>D_tT=0</m>. Differentiate once more and use <m>D_sD_tT=D_tD_sT+R(S,T)T</m>. Then <me>E\prime\prime(0)=-\int g(S,D_t^2S+R(S,T)T)dt=\int (|D_tS|^2-R(S,T,T,S))dt.</me> The boundary term vanishes since <m>S</m> is zero at both endpoints.</p>
+    </remark>
+    <remark>
+      <title>length versus energy</title>
+      <p>For a unit-speed base geodesic and a variation whose individual curves have constant speed, <m>L(s)^2=2LE(s)</m>, where <m>L</m> on the right is the base interval length. Since <m>L\prime(0)=0</m>, differentiation gives <m>L\prime\prime(0)=E\prime\prime(0)</m>. For arbitrary variations, the length formula instead uses the normal component of <m>S</m>; tangential reparametrizations do not change length.</p>
+    </remark>
+    <example>
+      <title>Euclidean straight segment</title>
+      <p>In Euclidean space <m>R=0</m>, so the energy second variation is the integral of the squared derivative of <m>S</m>. It is strictly positive for every nonzero fixed-endpoint variation field.</p>
+    </example>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Compute the index form in Euclidean space.</p>
+        </statement>
+        <solution>
+          <p>It is <m>\int |S</m>′<m>|^{2}</m>, strictly positive for nonzero fixed-endpoint fields.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Why is the energy second variation positive when sectional curvature is nonpositive?</p>
+        </statement>
+        <solution>
+          <p>Both terms in the integrand are nonnegative. If the integral vanishes then <m>S</m> is parallel, and its zero endpoint forces <m>S</m> to vanish identically.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-14">
+    <title>Sectional curvature and Myers theorem</title>
+    <p>Sectional curvature measures curvature in a two-dimensional tangent plane. Lecture notes: 7556–7557. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <statement>
+        <p><me>\sec(v,w)=\frac{R(v,w,w,v)}{|v|^2|w|^2-g(v,w)^2}.</me> The denominator is the squared area of the parallelogram. Both numerator and denominator transform by the square of the determinant of a basis change, so the ratio depends only on the plane.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p>Sectional curvatures determine <m>R</m> by polarization and its algebraic symmetries. Constant sectional curvature <m>k</m> gives <m>R(X,Y,Z,W)=k(g(X,W)g(Y,Z)-g(X,Z)g(Y,W))</m>.</p>
+      </statement>
+    </proposition>
+    <remark>
+      <title>nonpositive curvature</title>
+      <p>If <m>\operatorname{sec}\le 0</m>, the index form is positive for every nonzero fixed-endpoint field: the derivative term is nonnegative and can vanish only for a parallel field, which must be zero by the endpoint condition. Geodesics are strict local energy minimizers (and local length minimizers modulo reparametrization).</p>
+    </remark>
+    <theorem>
+      <title>Myers diameter bound</title>
+      <statement>
+        <p>For a connected complete manifold of dimension at least two with <m>\operatorname{sec}\ge 1</m>, <m>diam(M)\le \pi</m>. Completeness is required to invoke existence of minimizing geodesics (Hopf–Rinow).</p>
+      </statement>
+      <proof>
+        <p>Suppose a minimizing unit-speed geodesic has length <m>L&gt;\pi</m>. Parallel transport a unit normal vector <m>V</m> along it. Use <m>S(t)=\operatorname{sin}(\pi t/L)V(t)</m>. Then the index form is at most <m>\int [(\pi /L)^{2}\operatorname{cos}^{2}(\pi t/L)-\operatorname{sin}^{2}(\pi t/L)]dt</m> <m>=</m> <m>L/2((\pi /L)^{2}-1)&lt;0</m>, contradicting minimality.</p>
+      </proof>
+    </theorem>
+    <remark>
+      <title>Proof — diameter estimate</title>
+      <p>Assume <m>M</m> is connected, complete, of dimension at least two, and <m>\sec\geq1</m>. Hopf–Rinow gives a minimizing unit-speed geodesic of length <m>L</m> between any two points. Choose a parallel unit normal field <m>V</m> and set <m>S(t)=\sin(\pi t/L)V(t)</m>. Then <me>I(S,S)\leq\int_0^L [(\pi/L)^2\cos^2(\pi t/L)-\sin^2(\pi t/L)]dt=\frac L2((\pi/L)^2-1).</me> If <m>L&gt;\pi</m> this contradicts nonnegativity of the second variation of a minimizer. Hence the diameter is at most <m>\pi</m>. Completeness also implies compactness by Hopf–Rinow.</p>
+    </remark>
+    <remark>
+      <title>hypotheses and generalization</title>
+      <p>Completeness is essential. The stronger Bonnet–Myers theorem uses a positive lower bound on Ricci curvature instead of sectional curvature. The argument above is the sectional-curvature version in the lecture notes.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What bound follows if <m>\operatorname{sec}\ge k&gt;0</m>?</p>
+        </statement>
+        <solution>
+          <p>Rescale the metric or use the same test field to obtain <m>\pi /\sqrt{k}</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>If <m>\operatorname{sec}</m> <m>\ge</m> <m>k</m> <m>&gt;</m> 0, what is the diameter bound?</p>
+        </statement>
+        <solution>
+          <p>Replace 1 by <m>k</m> in the integral; the contradiction occurs for <m>L&gt;\pi/\sqrt{k}</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-15">
+    <title>Gauss–Bonnet theorem</title>
+    <p>Total Gaussian curvature is a topological invariant of a closed oriented surface. Lecture notes: 7558–7560. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>curvature form</title>
+      <statement>
+        <p>For an oriented orthonormal frame <m>E_{1},E_{2}</m>, <m>\Omega (X,Y)=g(R(X,Y)E_{2},E_{1})</m>. It is independent of the oriented frame and equals <m>K</m> dA.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <title>connection form</title>
+      <statement>
+        <p>Set <m>\alpha (X)=g(\nabla _{x}E_{2},E_{1})</m>. Metric compatibility gives <m>\nabla _{x}E_{2}=\alpha (X)E_{1}</m> and <m>\nabla _{x}E_{1}=-\alpha (X)E_{2}</m>. Then <m>d\alpha =\Omega</m>.</p>
+      </statement>
+      <proof>
+        <p>Expand <m>R(X,Y)E_{2}</m> using these formulas. The <m>E_{2}</m> terms cancel and the <m>E_{1}</m> coefficient is <m>X\alpha (Y)-Y\alpha (X)-\alpha ([X,Y])</m>, exactly <m>d\alpha (X,Y)</m>.</p>
+      </proof>
+    </proposition>
+    <proposition>
+      <title>holonomy</title>
+      <statement>
+        <p>Write a parallel unit field as <m>V=\cos\theta E_1+\sin\theta E_2</m>. Substitution into <m>\nabla _{t}V=0</m> gives <m>\theta\prime=\alpha(T)</m>. Around a positively oriented loop bounding <m>D</m> in a chart, its rotation angle modulo <m>2\pi</m> is <m>\oint\alpha=\int_D\Omega</m> by Stokes.</p>
+      </statement>
+    </proposition>
+    <theorem>
+      <title>Gauss–Bonnet</title>
+      <statement>
+        <p>For a closed connected oriented surface, <me>\int_M K\,dA=2\pi\chi(M)=2\pi(2-2g).</me></p>
+      </statement>
+      <proof>
+        <p>For a sufficiently small geodesic triangle with interior angles a,b,c, the tangent is parallel along each edge and turns by <m>\pi</m> minus the interior angle at each vertex. Hence the holonomy angle is <m>a+b+c-\pi</m>, with the real lift fixed by smallness. Sum over a geodesic triangulation. Angles around each vertex sum to <m>2\pi</m>, so total curvature is <m>2\pi V-\pi F</m>. Since <m>3F=2E</m>, this equals <m>2\pi (V-E+F)</m>.</p>
+      </proof>
+    </theorem>
+    <remark>
+      <title>Proof — local connection form</title>
+      <p>For an oriented orthonormal frame, set <m>\alpha(X)=g(\nabla_XE_2,E_1)</m>. Metric compatibility yields <m>\nabla_XE_2=\alpha(X)E_1</m> and <m>\nabla_XE_1=-\alpha(X)E_2</m>. Expanding the curvature definition cancels the quadratic terms in <m>\alpha</m> and gives <m>R(X,Y)E_2=d\alpha(X,Y)E_1</m>. Thus <m>\Omega=d\alpha=K\,dA</m> locally.</p>
+    </remark>
+    <remark>
+      <title>Proof — parallel transport and angle excess</title>
+      <p>Write a parallel unit field along a loop as <m>V=\cos\theta E_1+\sin\theta E_2</m>. Differentiating gives <m>D_tV=(\dot\theta-\alpha(T))(-\sin\theta E_1+\cos\theta E_2)</m>, hence <m>\dot\theta=\alpha(T)</m>. Stokes gives <m>\theta(T)-\theta(0)=\int_D K\,dA</m> for a loop bounding a chart domain. For a sufficiently small positively oriented geodesic triangle, the tangent is parallel along each edge and turns by the exterior angles at the vertices. Its total turning relative to the local frame is <m>2\pi</m>. Therefore the curvature integral is <m>2\pi-\sum(\pi-\beta_i)=\sum\beta_i-\pi</m>.</p>
+    </remark>
+    <remark>
+      <title>Proof — global sum</title>
+      <p>Triangulate the closed oriented surface by sufficiently small geodesic triangles. Summing angle excesses gives <m>\int_M K\,dA=2\pi V-\pi F</m>, since angles around each vertex sum to <m>2\pi</m>. Every edge belongs to two faces, so <m>3F=2E</m>. Consequently <m>2\pi V-\pi F=2\pi(V-E+F)=2\pi\chi(M)</m>.</p>
+    </remark>
+    <example>
+      <title>topology constrains curvature</title>
+      <p>A sphere has total curvature <m>4\pi</m>, a torus has total curvature zero, and a closed oriented genus <m>h</m> surface has total curvature <m>4\pi (1-h)</m>. In particular a torus cannot admit a metric with everywhere strictly positive Gaussian curvature.</p>
+    </example>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Find the total curvature of a genus two surface.</p>
+        </statement>
+        <solution>
+          <p><m>-4\pi</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Can a torus have everywhere positive Gaussian curvature?</p>
+        </statement>
+        <solution>
+          <p>No; its total curvature is zero.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Why does <m>\Omega</m> being locally exact not force its global integral to vanish?</p>
+        </statement>
+        <solution>
+          <p>The local connection forms need not agree on overlaps. A global <m>\alpha</m> with <m>\Omega =d\alpha</m> would force the integral to vanish by Stokes.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Find the area of a closed genus 2 surface of constant curvature <m>-1</m>.</p>
+        </statement>
+        <solution>
+          <p>Gauss–Bonnet gives <m>-Area=-4\pi</m>, so <m>Area=4\pi</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-16">
+    <title>Second fundamental form</title>
+    <p>Extrinsic curvature measures how the normal changes as one moves along a surface. Lecture notes: 7561–7562. Proof details and exercises are expanded for Atlas.</p>
+    <definition>
+      <title>lecture convention</title>
+      <statement>
+        <p>For an oriented embedded surface in <m>\mathbb R ^{3}</m> with unit normal <m>\nu</m>, <me>h(X,Y)=-\langle D_XY,\nu\rangle,\qquad S(X)=D_X\nu.</me> The shape operator is tangent because <m>\nu</m> has unit length.</p>
+      </statement>
+    </definition>
+    <proposition>
+      <statement>
+        <p><m>h(X,Y)=g(SX,Y)</m> is symmetric. Indeed differentiating <m>g(Y,\nu )=0</m> gives the equality, while torsion freeness gives <m>h(X,Y)-h(Y,X)=-g([X,Y],\nu )=0</m>.</p>
+      </statement>
+    </proposition>
+    <definition>
+      <title>principal curvatures</title>
+      <statement>
+        <p>The self-adjoint <m>S</m> has orthonormal eigenvectors with eigenvalues <m>k_{1},k_{2}</m>. Define <m>K=\operatorname{det}</m> <m>S=k_{1}k_{2}</m> and <m>H=\operatorname{tr}</m> <m>S=k_{1}+k_{2}</m>. Some texts divide <m>H</m> by two; the lectures do not.</p>
+      </statement>
+    </definition>
+    <example>
+      <p>For an outward-oriented sphere of radius <m>a</m>, <m>\nu =p/a</m>, so <m>S=I/a</m>, <m>K=1/a^{2}</m>, <m>H=2/a</m>. For a cylinder the axial direction has eigenvalue zero and the circular direction has eigenvalue <m>1/a</m>, so <m>K=0</m>, <m>H=1/a</m>.</p>
+    </example>
+    <example>
+      <title>graph</title>
+      <p>For <m>z=u(x,y)</m>, the upward normal is <m>(-u_x,-u_y,1)/\sqrt{1+|\nabla u|^2}</m>. At a critical point of <m>u</m>, the tangent coordinate basis is orthonormal and differentiating the normal gives <m>S=-D^{2}u</m>. Hence <m>K=\operatorname{det}</m> <m>D^{2}u</m> and <m>H=-\Delta u</m> at that point.</p>
+    </example>
+    <remark>
+      <title>Proof — symmetry and tangency</title>
+      <p>Since <m>|\nu|^2=1</m>, <m>\langle\bar\nabla_X\nu,\nu\rangle=0</m>, so <m>S(X)=\bar\nabla_X\nu</m> is tangent. Differentiating <m>\langle Y,\nu\rangle=0</m> gives <m>h(X,Y)=\langle Y,S(X)\rangle</m>. Torsion freeness of the ambient connection gives <m>h(X,Y)-h(Y,X)=-\langle[X,Y],\nu\rangle=0</m>. Thus <m>S</m> is self-adjoint and admits an orthonormal eigenbasis.</p>
+    </remark>
+    <example>
+      <title>graph at a horizontal tangent plane</title>
+      <p>For <m>F(x,y)=(x,y,u(x,y))</m> with <m>Du(0)=0</m>, the upward unit normal is <m>\nu=(-u_x,-u_y,1)/\sqrt{1+|Du|^2}</m>. At the origin its derivatives are <m>(-u_{xx},-u_{xy},0)</m> and <m>(-u_{xy},-u_{yy},0)</m>. Hence <m>S=-D^2u</m>, <m>K=\det D^2u</m> and <m>H=-\Delta u</m> at that point, using the lecture convention <m>H=\operatorname{tr}S</m>.</p>
+    </example>
+    <remark>
+      <title>intrinsic versus extrinsic</title>
+      <p>The principal curvatures measure how rapidly the normal changes along principal directions. A cylinder bends in one direction but not the other. Its Gaussian curvature is zero even though its mean curvature is nonzero.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Compute K,H at the origin for <m>z=x^{2}-y^{2}</m>.</p>
+        </statement>
+        <solution>
+          <p><m>S=diag(-2,2)</m>, so <m>K=-4</m> and <m>H=0</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Compute <m>K</m> and <m>H</m> at the origin for <m>z=x^{2}-2y^{2}</m> with upward normal.</p>
+        </statement>
+        <solution>
+          <p>The shape operator has eigenvalues <m>-2</m> and 4. Thus <m>K=-8</m> and <m>H=2</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>What changes if the unit normal is reversed?</p>
+        </statement>
+        <solution>
+          <p><m>S</m>, <m>h</m>, both principal curvatures and <m>H</m> change sign. <m>K</m> remains unchanged.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+  <section xml:id="course-15-lesson-17">
+    <title>Gauss equation</title>
+    <p>The Gauss equation connects extrinsic bending with intrinsic curvature. Lecture notes: 7563. Proof details and exercises are expanded for Atlas.</p>
+    <theorem>
+      <title>Gauss equation</title>
+      <statement>
+        <p><me>R^M(X,Y)Z=h(Y,Z)S(X)-h(X,Z)S(Y).</me></p>
+      </statement>
+      <proof>
+        <p>The ambient derivative decomposes as <m>D_{x}Y=\nabla _{x}Y-h(X,Y)\nu</m>. Taking tangent components gives <m>(D_XD_YZ)^T=\nabla_X\nabla_YZ-h(Y,Z)S(X)</m>. Subtract the exchanged expression and the bracket derivative. Ambient curvature vanishes, yielding the stated identity.</p>
+      </proof>
+    </theorem>
+    <corollary>
+      <title>Theorema Egregium</title>
+      <statement>
+        <p>For an orthonormal tangent basis <m>E_{1},E_{2}</m>, <m>\operatorname{sec}(E_{1},E_{2})=h(E_{1},E_{1})h(E_{2},E_{2})-h(E_{1},E_{2})^{2}=\operatorname{det}</m> <m>S=K</m>. Thus Gaussian curvature is determined entirely by the induced metric, even though it was defined using an ambient normal.</p>
+      </statement>
+    </corollary>
+    <remark>
+      <title>Interpretation</title>
+      <p>A plane and a cylinder are locally isometric and have the same Gaussian curvature, but different mean curvatures. A sphere cannot be flattened locally without changing distances.</p>
+    </remark>
+    <remark>
+      <title>Proof — tangential projection</title>
+      <p>Use <m>\bar\nabla_YZ=\nabla_YZ-h(Y,Z)\nu</m>. Differentiating and taking tangent components gives <me>(\bar\nabla_X\bar\nabla_YZ)^T=\nabla_X\nabla_YZ-h(Y,Z)S(X).</me> The derivative of the scalar <m>h</m> contributes only a normal term. Subtract the swapped expression and the bracket term. Ambient Euclidean curvature is zero, hence <me>R^M(X,Y)Z=h(Y,Z)S(X)-h(X,Z)S(Y).</me> Pairing with <m>W</m> gives the scalar Gauss equation.</p>
+    </remark>
+    <corollary>
+      <title>Theorema Egregium</title>
+      <statement>
+        <p>For an orthonormal basis <m>E_1,E_2</m>, the Gauss equation yields <m>\sec(E_1,E_2)=h_{11}h_{22}-h_{12}^2=\det S=K</m>. The left side depends only on the metric and its Levi-Civita connection. Thus the product of principal curvatures is intrinsic even though the principal curvatures individually are extrinsic.</p>
+      </statement>
+    </corollary>
+    <example>
+      <title>paper and sphere</title>
+      <p>A flat sheet can be rolled into a cylinder without changing its intrinsic metric. It cannot be mapped isometrically onto an open patch of a round sphere: the Gaussian curvatures differ.</p>
+    </example>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is mean curvature not intrinsic?</p>
+        </statement>
+        <solution>
+          <p>The plane and cylinder have locally identical metrics but different <m>H</m>.</p>
+        </solution>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>Can two locally isometric surfaces have different mean curvatures?</p>
+        </statement>
+        <solution>
+          <p>Yes. A plane and a cylinder are locally isometric, but their mean curvatures are respectively zero and <m>1/R</m> with the outward normal.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </section>
+</chapter>

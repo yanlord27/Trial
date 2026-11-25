@@ -1,0 +1,676 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="reference">
+  <title>Original reference index</title>
+  <section xml:id="reference-01">
+    <title>Dual spaces</title>
+    <p>A dual vector space <m>V*</m> consists of linear maps <m>V</m> <m>\to</m> <m>k</m>.</p>
+    <p>A vector is an input; a covector is a linear measurement of that input.</p>
+    <p><m>V*</m> <m>=</m> <m>Hom_{k}(V,k)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>For a basis <m>e_{i}</m>, define <m>e^{i}(e_{j})=\delta ^{i}_{j}</m>. These covectors form a basis of <m>V*</m> by expansion of any linear functional.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is <m>V</m> <m>\to</m> <m>V**</m> canonical, while <m>V</m> <m>\to</m> <m>V*</m> generally is not?</p>
+        </statement>
+        <solution>
+          <p>Evaluation requires no basis; identifying <m>V</m> with <m>V*</m> generally requires additional structure.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tensor products, Differential forms, Yoneda lemma.</p>
+  </section>
+  <section xml:id="reference-02">
+    <title>Tensor products</title>
+    <p><m>V</m> <m>\otimes</m> <m>W</m> represents bilinear maps out of <m>V</m> <m>\times</m> <m>W</m>.</p>
+    <p>Replace a bilinear operation on two inputs with a linear operation on one new space.</p>
+    <p><m>\operatorname{Hom}(V</m> <m>\otimes</m> W,U) <m>\cong</m> <m>\operatorname{Bilin}(V</m> <m>\times</m> W,U)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Construct the free vector space on pairs and quotient by the relations enforcing bilinearity. Every bilinear map kills those relations and factors uniquely.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is a general tensor not necessarily a pure tensor?</p>
+        </statement>
+        <solution>
+          <p>In <m>k^{2}</m> <m>\otimes</m> <m>k^{2}</m>, <m>e_{1}\otimes e_{1}</m> + <m>e_{2}\otimes e_{2}</m> corresponds to a rank-two matrix, unlike any pure tensor.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Dual spaces, Modules, Tor, Universal properties, Vector bundles.</p>
+  </section>
+  <section xml:id="reference-03">
+    <title>Jordan form</title>
+    <p>Over a splitting field, a linear operator decomposes into Jordan blocks.</p>
+    <p>Each block records an eigenvalue and a chain of generalized eigenvectors.</p>
+    <p><m>J</m> <m>=</m> <m>\lambda I</m> + <m>N</m>, with <m>N</m> nilpotent</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>View <m>V</m> as a k[t]-module with <m>t</m> acting by the operator; the PID structure theorem gives cyclic primary summands.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What distinguishes two nilpotent operators with equal <m>\operatorname{rank}</m>?</p>
+        </statement>
+        <solution>
+          <p>The ranks of all powers determine the block sizes; <m>\operatorname{rank}</m> alone may not.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Modules, Fields.</p>
+  </section>
+  <section xml:id="reference-04">
+    <title>Measure and integration</title>
+    <p>A measure is a countably additive nonnegative set function on a sigma algebra.</p>
+    <p>Measure extends length or volume to a flexible notion of size. Integration accumulates weighted size.</p>
+    <p><m>\int</m> <m>f</m> <m>d\mu</m> <m>=</m> sup <m>\int</m> <m>s</m> <m>d\mu</m>  (0 <m>\le</m> <m>s</m> <m>\le</m> <m>f</m>, <m>s</m> simple)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Define the integral first for nonnegative simple functions, then take the supremum and extend to integrable signed functions.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Can a nonempty set have measure zero?</p>
+        </statement>
+        <solution>
+          <p>Yes: a singleton in <m>R</m> has Lebesgue measure zero.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Convergence, Hilbert spaces.</p>
+  </section>
+  <section xml:id="reference-05">
+    <title>Convergence</title>
+    <p>Pointwise, uniform, in-measure and <m>L^{p}</m> convergence capture different notions of approximation.</p>
+    <p>Pointwise convergence controls each point eventually; norm convergence controls aggregate error.</p>
+    <p><m>\Vert f_{n}</m> <m>-</m> <m>f\Vert _{p}</m> <m>\to</m> 0</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Markov’s inequality gives <m>\mu (|f_{n}-f|&gt;\epsilon )</m> <m>\le</m> <m>\Vert f_{n}-f\Vert _{p}^{p}/\epsilon ^{p}</m>, proving <m>L^{p}</m> convergence implies convergence in measure.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Does pointwise convergence imply <m>L^{1}</m> convergence?</p>
+        </statement>
+        <solution>
+          <p>No: <m>f_{n}=n\cdot 1_(0,1/n)</m> converges pointwise to zero on (0,1), but its integral is one.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Measure and integration, Hilbert spaces.</p>
+  </section>
+  <section xml:id="reference-06">
+    <title>Hilbert spaces</title>
+    <p>A Hilbert space is a complete inner product space.</p>
+    <p>Euclidean geometry survives in infinite dimensions, including orthogonal projection.</p>
+    <p><m>\Vert x\Vert ^{2}</m> <m>=</m> <m>\langle x,x\rangle</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>For a closed subspace, a minimizing sequence for distance is Cauchy by the parallelogram identity; its limit is the unique nearest point.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is the closed unit ball of <m>\ell ^{2}</m> not norm compact?</p>
+        </statement>
+        <solution>
+          <p>The standard basis has pairwise distance <m>\sqrt{2}</m>, so has no convergent subsequence.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Convergence, Dual spaces, Riemannian metrics.</p>
+  </section>
+  <section xml:id="reference-07">
+    <title>Groups</title>
+    <p>A group is a set with associative multiplication, identity and inverses.</p>
+    <p>Groups encode reversible symmetries and their composition.</p>
+    <p><m>G/\operatorname{ker}</m> <m>\phi</m> <m>\cong</m> <m>\operatorname{im}</m> <m>\phi</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The induced map from cosets to the image is well-defined, bijective and multiplicative.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why must a kernel be normal?</p>
+        </statement>
+        <solution>
+          <p><m>\phi (gkg^{-1})=\phi (g)e\phi (g)^{-1}=e</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Fundamental group, Rings, Galois theory.</p>
+  </section>
+  <section xml:id="reference-08">
+    <title>Rings</title>
+    <p>A ring has an abelian additive group and associative distributive multiplication.</p>
+    <p>Rings encode arithmetic; ideals encode which elements become zero in a quotient.</p>
+    <p><m>R/I</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The quotient operations are well-defined for <m>a</m> <m>two-sided</m> ideal because changing representatives changes sums and products only by ideal elements.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When is a commutative quotient <m>R/I</m> a field?</p>
+        </statement>
+        <solution>
+          <p>Exactly when <m>I</m> is maximal (for a unital commutative ring).</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Modules, Fields, Nullstellensatz.</p>
+  </section>
+  <section xml:id="reference-09">
+    <title>Modules</title>
+    <p>An <m>R-module</m> generalizes a vector space by allowing scalars from a ring.</p>
+    <p>Unlike vector spaces, modules can have torsion and need not have bases.</p>
+    <p><m>R^{m}</m> <m>\to</m> <m>R^{n}</m> <m>\to</m> <m>M</m> <m>\to</m> 0</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>A generating set yields a surjection from a free module; its kernel records the relations.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Give a <m>Z-module</m> that is not free.</p>
+        </statement>
+        <solution>
+          <p><m>Z/2Z</m>, since its nonzero element is torsion.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Rings, Exact sequences, Tensor products, Jordan form.</p>
+  </section>
+  <section xml:id="reference-10">
+    <title>Fields</title>
+    <p>A field is a commutative ring in which every nonzero element is invertible.</p>
+    <p>Field extensions add solutions to polynomial equations while preserving arithmetic.</p>
+    <p><m>[L:K]=[L:F][F:K]</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Products of elements from bases of <m>L/F</m> and <m>F/K</m> form a basis of <m>L/K</m>.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is every finite integral domain a field?</p>
+        </statement>
+        <solution>
+          <p>Multiplication by a nonzero element is injective and hence surjective on a finite set.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Galois theory, Rings.</p>
+  </section>
+  <section xml:id="reference-11">
+    <title>Galois theory</title>
+    <p>For a finite Galois extension <m>L/K</m>, intermediate fields correspond contravariantly to subgroups of <m>\operatorname{Gal}(L/K)</m>.</p>
+    <p>Symmetries of roots reveal the structure of field extensions.</p>
+    <p><m>F</m> <m>\leftrightarrow</m> <m>\operatorname{Gal}(L/F)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The fixed field theorem and the degree formula establish inverse correspondences.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Which intermediate extensions <m>F/K</m> are Galois?</p>
+        </statement>
+        <solution>
+          <p>Exactly those whose corresponding subgroup is normal.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Fields, Groups, Covering spaces.</p>
+  </section>
+  <section xml:id="reference-12">
+    <title>Fundamental group</title>
+    <p><m>\pi _{1}(X,x)</m> is the group of based loops modulo based homotopy.</p>
+    <p>A loop records a hole when it cannot be continuously contracted.</p>
+    <p><m>\pi _{1}(S^{1})</m> <m>\cong</m> <m>Z</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Lift loops to <m>R</m> under <m>t</m> <m>\mapsto</m> <m>\operatorname{exp}(2\pi it)</m>; the endpoint displacement is an integer and classifies the loop.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What is <m>\pi _{1}(S^{1}</m> ∨ <m>S^{1}</m>)?</p>
+        </statement>
+        <solution>
+          <p>The free group on two generators, by van Kampen.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Groups, Covering spaces, Homology.</p>
+  </section>
+  <section xml:id="reference-13">
+    <title>Covering spaces</title>
+    <p>A covering map locally looks like a disjoint union of copies of the base.</p>
+    <p>A path downstairs has a unique lift once its starting sheet is chosen.</p>
+    <p><m>p</m>: <m>R</m> <m>\to</m> <m>S^{1}</m>,  <m>t</m> <m>\mapsto</m> <m>\operatorname{exp}(2\pi it)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Subdivide a compact path into intervals mapping into evenly covered neighborhoods, then lift successively.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When does a based connected cover correspond to a normal subgroup?</p>
+        </statement>
+        <solution>
+          <p>When its subgroup of <m>\pi _{1}</m> is normal; for standard <m>covering-space</m> hypotheses this is equivalent to a regular cover.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Fundamental group, Galois theory, Manifolds.</p>
+  </section>
+  <section xml:id="reference-14">
+    <title>Manifolds</title>
+    <p>A smooth <m>n-manifold</m> is locally modeled on <m>R^{n}</m> with smooth coordinate transitions (and is Hausdorff and second countable).</p>
+    <p>Coordinates are local descriptions, not the object itself.</p>
+    <p><m>\phi</m>: <m>U</m> <m>\to</m> <m>R^{n}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Smooth transition maps ensure that differentiability is independent of the chart.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is <m>S^{2}</m> not covered by a single chart?</p>
+        </statement>
+        <solution>
+          <p>It is compact, whereas a nonempty open subset of <m>R^{2}</m> is not compact.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tangent spaces, Vector bundles, Covering spaces.</p>
+  </section>
+  <section xml:id="reference-15">
+    <title>Tangent spaces</title>
+    <p><m>T_{p}M</m> is the vector space of derivations at <m>p</m>, equivalently velocities of curves through <m>p</m>.</p>
+    <p>A tangent vector tells you how functions change in a chosen infinitesimal direction.</p>
+    <p><m>v(fg)=v(f)g(p)+f(p)v(g)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>In local coordinates, the chain rule (or the local first-order decomposition of f) gives <m>v(f)=\sum v(x^{i})\partial _{i}f(p)</m>.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>How does a smooth map act on tangent vectors?</p>
+        </statement>
+        <solution>
+          <p>By pushforward: <m>(dF_{p}v)(h)=v(h\circ F)</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Manifolds, Vector bundles, Connections.</p>
+  </section>
+  <section xml:id="reference-16">
+    <title>Vector bundles</title>
+    <p>A vector bundle is a family of vector spaces locally trivial over a base.</p>
+    <p>A vector space lives over each point; local frames identify nearby fibers without canonically identifying all fibers.</p>
+    <p><m>E|_{u}</m> <m>\cong</m> <m>U</m> <m>\times</m> <m>R^{k}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Transition functions take values in <m>\operatorname{GL}(k)</m> and describe how local trivializations glue.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Is every vector bundle globally trivial?</p>
+        </statement>
+        <solution>
+          <p>No: the <m>M</m>öbius line bundle is a counterexample.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tangent spaces, Tensor products, Connections.</p>
+  </section>
+  <section xml:id="reference-17">
+    <title>Differential forms</title>
+    <p>A differential <m>k-form</m> is a smooth section of the kth exterior power of the cotangent bundle.</p>
+    <p>Forms measure oriented infinitesimal lengths, areas and volumes.</p>
+    <p><m>d^{2}=0</m>;  <m>d(\alpha</m>∧<m>\beta )=d\alpha</m>∧<m>\beta +(-1)^{k}\alpha</m>∧<m>d\beta</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>In coordinates, <m>d</m> differentiates coefficients and wedges coordinate covectors; mixed partial symmetry gives <m>d^{2}=0</m>.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is every exact form closed?</p>
+        </statement>
+        <solution>
+          <p>If <m>\omega =d\eta</m>, then <m>d\omega =d^{2}\eta =0</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Dual spaces, Vector bundles, Homology, Frobenius theorem.</p>
+  </section>
+  <section xml:id="reference-18">
+    <title>Frobenius theorem</title>
+    <p>A smooth <m>constant-\operatorname{rank}</m> distribution is integrable exactly when it is involutive.</p>
+    <p>Allowed directions form tangent planes of actual leaves precisely when brackets introduce no forbidden directions.</p>
+    <p>[X,Y] <m>\in</m> <m>\Gamma (D)</m> for X,Y <m>\in</m> <m>\Gamma (D)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Necessity follows because brackets of fields tangent to a leaf remain tangent. Sufficiency follows from local straightening of a commuting frame.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Is <m>\operatorname{span}(\partial _{x}+y\partial z</m>, <m>\partial</m>ᵧ) involutive?</p>
+        </statement>
+        <solution>
+          <p>No: the bracket is <m>-\partial z</m>, which is not in the <m>\operatorname{span}</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tangent spaces, Differential forms, Manifolds.</p>
+  </section>
+  <section xml:id="reference-19">
+    <title>Riemannian metrics</title>
+    <p>A Riemannian metric is a smooth <m>positive-definite</m> symmetric covariant 2-tensor.</p>
+    <p>It supplies lengths and angles independently at each tangent space.</p>
+    <p><m>g_{p}</m>: <m>T_{p}M</m> <m>\times</m> <m>T_{p}M</m> <m>\to</m> <m>R</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>In coordinates the metric is a <m>positive-definite</m> matrix of smooth functions; tensor transformation makes the definition intrinsic.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Must <m>g_{ij}</m> equal <m>\delta _{ij}</m> in every chart?</p>
+        </statement>
+        <solution>
+          <p>No. Even Euclidean space in polar coordinates has metric <m>dr^{2}+r^{2}d\theta ^{2}</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Connections, Geodesics, Curvature, Hilbert spaces.</p>
+  </section>
+  <section xml:id="reference-20">
+    <title>Connections</title>
+    <p>A connection differentiates sections along vector fields and satisfies the Leibniz rule.</p>
+    <p>It specifies how to compare vectors in nearby fibers.</p>
+    <p><m>\nabla _{x}(fY)=X(f)Y+f\nabla _{x}Y</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The Levi-Civita connection is uniquely determined by metric compatibility and zero torsion via the Koszul formula.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is <m>\nabla</m> not a tensor?</p>
+        </statement>
+        <solution>
+          <p>It is not <m>C^\infty</m>-linear in its second argument because of <m>X(f)Y</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Vector bundles, Riemannian metrics, Geodesics, Curvature.</p>
+  </section>
+  <section xml:id="reference-21">
+    <title>Geodesics</title>
+    <p>A geodesic has zero covariant acceleration.</p>
+    <p>It moves straight according to the geometry itself, even when it looks curved from outside.</p>
+    <p><m>\nabla \gamma</m>′<m>\gamma</m>′<m>=0</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>In coordinates this is a <m>second-order</m> ODE: <m>x</m>̈<m>^{k}+\Gamma ^{k}_{ij}x</m>̇<m>^{i}x</m>̇<m>^{j}=0</m>. Local existence and uniqueness follow from ODE theory.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Are geodesics always globally shortest paths?</p>
+        </statement>
+        <solution>
+          <p>No: a <m>great-circle</m> arc longer than a semicircle is not globally shortest.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Connections, Curvature, Riemannian metrics.</p>
+  </section>
+  <section xml:id="reference-22">
+    <title>Curvature</title>
+    <p>Curvature measures the failure of covariant derivatives to commute.</p>
+    <p>Transporting a vector around a small loop can rotate it; curvature records the infinitesimal discrepancy.</p>
+    <p><m>R(X,Y)Z=\nabla _{x}\nabla</m>ᵧ<m>Z-\nabla</m>ᵧ<m>\nabla _{x}Z-\nabla _[X,Y]Z</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Expanding with the connection Leibniz rules shows all derivatives of scalar multipliers cancel, so <m>R</m> is tensorial.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Can a cylinder have zero intrinsic curvature?</p>
+        </statement>
+        <solution>
+          <p>Yes. It is locally isometric to the plane despite bending in ambient space.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Connections, Geodesics, Riemannian metrics.</p>
+  </section>
+  <section xml:id="reference-23">
+    <title>Universal properties</title>
+    <p>A universal property characterizes an object through unique factorization of morphisms.</p>
+    <p>Describe what an object does, rather than how it is constructed.</p>
+    <p><m>\forall f</m>, <m>\exists</m>! <m>u</m> with <m>f=u\circ i</m>  (typical factorization)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>If two objects satisfy the same universal property, their universal maps give mutually inverse morphisms by uniqueness.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why are products unique up to unique compatible isomorphism?</p>
+        </statement>
+        <solution>
+          <p>Apply the product property in both directions and use uniqueness for the composites.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tensor products, Limits, Yoneda lemma.</p>
+  </section>
+  <section xml:id="reference-24">
+    <title>Yoneda lemma</title>
+    <p>Natural transformations <m>\operatorname{Hom}(A,-)</m> <m>\to</m> <m>F</m> correspond bijectively to elements of <m>F(A)</m>.</p>
+    <p>An object is understood by how it maps to other objects.</p>
+    <p><m>Nat(\operatorname{Hom}(A,-),F)</m> <m>\cong</m> <m>F(A)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Evaluate at <m>id_A</m>; conversely an element a defines the transformation <m>f</m> <m>\mapsto</m> <m>F(f)(a)</m>. Naturality proves these are inverse.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What does Yoneda imply about representable functors?</p>
+        </statement>
+        <solution>
+          <p>Isomorphic representable functors have isomorphic representing objects.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Universal properties, Limits, Dual spaces.</p>
+  </section>
+  <section xml:id="reference-25">
+    <title>Limits</title>
+    <p>A limit is a terminal cone over a diagram.</p>
+    <p>It collects compatible choices from all objects in a diagram.</p>
+    <p><m>\operatorname{Hom}(T,\operatorname{lim}</m> D) <m>\cong</m> compatible cones from <m>T</m> to <m>D</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The terminal cone property gives a unique map from every other cone, hence the stated bijection.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What is the pullback of <m>f:A\to C</m> and <m>g:B\to C</m> in Set?</p>
+        </statement>
+        <solution>
+          <p>Pairs (a,b) satisfying <m>f(a)=g(b)</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Universal properties, Yoneda lemma, Exact sequences.</p>
+  </section>
+  <section xml:id="reference-26">
+    <title>Exact sequences</title>
+    <p>A sequence is exact when the image of each map equals the kernel of the next.</p>
+    <p>Every element killed by the next map is accounted for by the preceding map.</p>
+    <p>0 <m>\to</m> <m>A</m> <m>\to</m> <m>B</m> <m>\to</m> <m>C</m> <m>\to</m> 0</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The endpoint zeros force injectivity and surjectivity, so <m>B/A</m> <m>\cong</m> <m>C</m> after identifying <m>A</m> with its image.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Does every short exact sequence split?</p>
+        </statement>
+        <solution>
+          <p>No: <m>0\to Z\to Z\to Z/2Z\to 0</m> with first map multiplication by 2.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Modules, Homology, Tor, Ext.</p>
+  </section>
+  <section xml:id="reference-27">
+    <title>Homology</title>
+    <p>Homology measures the failure of a chain complex to be exact.</p>
+    <p>Cycles are things with zero boundary; boundaries are cycles explained by the previous dimension.</p>
+    <p><m>H_{n}=\operatorname{ker}</m> <m>d_{n}</m> <m>/</m> <m>\operatorname{im}</m> <m>d_{n}</m>₊<m>_{1}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Since <m>d_{n}d_{n}</m>₊<m>_{1}=0</m>, boundaries lie in cycles and the quotient is defined.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When is <m>H_{n}</m> zero?</p>
+        </statement>
+        <solution>
+          <p>Exactly when the complex is exact at degree <m>n</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Exact sequences, Differential forms, Fundamental group, Tor, Ext.</p>
+  </section>
+  <section xml:id="reference-28">
+    <title>Tor</title>
+    <p><m>Tor</m> is the left derived functor of tensor product.</p>
+    <p>It measures relations lost when tensoring an injection.</p>
+    <p><m>Tor^{(}</m>ᴿ<m>^{)}_{n}(M,N)=H_{n}(P</m>•<m>\otimes</m>ᴿN)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Take a projective resolution <m>P</m>•<m>\to M</m> and tensor with <m>N</m>. Comparison maps between resolutions induce canonical homology isomorphisms.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Compute <m>Tor_{1}^Z(Z/m,Z/n)</m>.</p>
+        </statement>
+        <solution>
+          <p>Using the resolution with multiplication by <m>m</m>, the answer is <m>Z/\operatorname{gcd}(m,n)Z</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tensor products, Homology, Exact sequences, Ext.</p>
+  </section>
+  <section xml:id="reference-29">
+    <title>Ext</title>
+    <p><m>Ext</m> is the right derived functor of <m>\operatorname{Hom}</m> in its second argument, equivalently computed using a projective resolution in the first.</p>
+    <p><m>Ext^{1}</m> classifies extensions of modules up to equivalence.</p>
+    <p><m>Ext</m>ᴿ<m>^{n}(M,N)=H^{n}(\operatorname{Hom}</m>ᴿ(P•,N))</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Apply <m>\operatorname{Hom}</m> to a projective resolution of <m>M</m> and take cohomology.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Compute <m>Ext^{1}_Z(Z/m,Z)</m>.</p>
+        </statement>
+        <solution>
+          <p><m>Z/mZ</m>, from the cokernel of multiplication by <m>m</m> on <m>Z</m>.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Modules, Homology, Exact sequences, Tor.</p>
+  </section>
+  <section xml:id="reference-30">
+    <title>Nullstellensatz</title>
+    <p>Over an algebraically closed field, <m>I(V(I))=\sqrt{I}</m> for ideals in a polynomial ring.</p>
+    <p>Polynomial equations and their geometric zero sets determine one another up to radical.</p>
+    <p><m>I(V(I))=\sqrt{I}</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>The weak Nullstellensatz plus the Rabinowitsch trick proves the strong form.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why do (x) and <m>(x^{2})</m> define the same zero set?</p>
+        </statement>
+        <solution>
+          <p>They have the same radical.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Rings, Fields, Affine varieties.</p>
+  </section>
+  <section xml:id="reference-31">
+    <title>Affine varieties</title>
+    <p>An affine algebraic set is the common zero locus of polynomials; an affine variety is often required to be irreducible.</p>
+    <p>Geometry is encoded by the ring of polynomial functions on the space.</p>
+    <p><m>k[X]=k[x_{1}</m>,…<m>,x_{n}]/I(X)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Restriction of polynomials to <m>X</m> has kernel <m>I(X)</m>, giving the coordinate ring.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>When is an affine algebraic set irreducible?</p>
+        </statement>
+        <solution>
+          <p>Exactly when its vanishing ideal is prime.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Nullstellensatz, Rings, Cubic surfaces.</p>
+  </section>
+  <section xml:id="reference-32">
+    <title>Cubic surfaces</title>
+    <p>A smooth cubic surface in projective 3-space over an algebraically closed field contains exactly 27 lines.</p>
+    <p>A highly curved algebraic surface can contain a rigid finite configuration of straight lines.</p>
+    <p>27 lines; each meets 10 others</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>One approach uses the description as the <m>blow-up</m> of <m>P^{2}</m> at six points in general position: six exceptional curves, fifteen transforms of lines and six transforms of conics.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>How many lines are disjoint from a given line?</p>
+        </statement>
+        <solution>
+          <p>16, since the other 26 include 10 meeting it.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Affine varieties, Manifolds.</p>
+  </section>
+</chapter>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-03">
+  <title>Multivariable analysis</title>
+  <section xml:id="course-03-lesson-01">
+    <title>Derivatives as linear maps</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-03-lesson-02">
+    <title>Chain rule and Taylor expansion</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-03-lesson-03">
+    <title>Inverse and implicit function theorems</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-03-lesson-04">
+    <title>Multiple integration</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>

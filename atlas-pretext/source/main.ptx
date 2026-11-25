@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <book xml:id="atlas">
+    <title>Atlas: A Library of Mathematics</title>
+    <frontmatter>
+      <titlepage>
+        <author>
+          <personname>Atlas</personname>
+        </author>
+      </titlepage>
+    </frontmatter>
+    <xi:include href="course-01.ptx"/>
+    <xi:include href="course-02.ptx"/>
+    <xi:include href="course-03.ptx"/>
+    <xi:include href="course-04.ptx"/>
+    <xi:include href="course-05.ptx"/>
+    <xi:include href="course-06.ptx"/>
+    <xi:include href="course-07.ptx"/>
+    <xi:include href="course-08.ptx"/>
+    <xi:include href="course-09.ptx"/>
+    <xi:include href="course-10.ptx"/>
+    <xi:include href="course-11.ptx"/>
+    <xi:include href="course-12.ptx"/>
+    <xi:include href="course-13.ptx"/>
+    <xi:include href="course-14.ptx"/>
+    <xi:include href="course-15.ptx"/>
+    <xi:include href="course-16.ptx"/>
+    <xi:include href="course-17.ptx"/>
+    <xi:include href="reference.ptx"/>
+  </book>
+</pretext>

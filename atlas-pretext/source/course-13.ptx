@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<chapter xml:id="course-13">
+  <title>Category theory and advanced algebra</title>
+  <section xml:id="course-13-lesson-01">
+    <title>Categories</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-13-lesson-02">
+    <title>Functors</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-13-lesson-03">
+    <title>Natural transformations</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-13-lesson-04">
+    <title>Universal properties</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>A universal property characterizes an object through unique factorization of morphisms.</p>
+      </statement>
+    </definition>
+    <p>Describe what an object does, rather than how it is constructed.</p>
+    <p><m>\forall f</m>, <m>\exists</m>! <m>u</m> with <m>f=u\circ i</m>  (typical factorization)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>If two objects satisfy the same universal property, their universal maps give mutually inverse morphisms by uniqueness.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why are products unique up to unique compatible isomorphism?</p>
+        </statement>
+        <solution>
+          <p>Apply the product property in both directions and use uniqueness for the composites.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Tensor products, Limits, Yoneda lemma.</p>
+  </section>
+  <section xml:id="course-13-lesson-05">
+    <title>Yoneda lemma</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p>Natural transformations <m>\operatorname{Hom}(A,-)</m> <m>\to</m> <m>F</m> correspond bijectively to elements of <m>F(A)</m>.</p>
+      </statement>
+    </definition>
+    <p>An object is understood by how it maps to other objects.</p>
+    <p><m>Nat(\operatorname{Hom}(A,-),F)</m> <m>\cong</m> <m>F(A)</m></p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Evaluate at <m>id_A</m>; conversely an element a defines the transformation <m>f</m> <m>\mapsto</m> <m>F(f)(a)</m>. Naturality proves these are inverse.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>What does Yoneda imply about representable functors?</p>
+        </statement>
+        <solution>
+          <p>Isomorphic representable functors have isomorphic representing objects.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Universal properties, Limits, Dual spaces.</p>
+  </section>
+  <section xml:id="course-13-lesson-06">
+    <title>Limits and colimits</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+  <section xml:id="course-13-lesson-07">
+    <title>Tensor products</title>
+    <p>Original review note — full chapter pending.</p>
+    <definition>
+      <statement>
+        <p><m>V</m> <m>\otimes</m> <m>W</m> represents bilinear maps out of <m>V</m> <m>\times</m> <m>W</m>.</p>
+      </statement>
+    </definition>
+    <p>Replace a bilinear operation on two inputs with a linear operation on one new space.</p>
+    <p><m>\operatorname{Hom}(V</m> <m>\otimes</m> W,U) <m>\cong</m> <m>\operatorname{Bilin}(V</m> <m>\times</m> W,U)</p>
+    <remark>
+      <title>Proof sketch</title>
+      <p>Construct the free vector space on pairs and quotient by the relations enforcing bilinearity. Every bilinear map kills those relations and factors uniquely.</p>
+    </remark>
+    <exercises>
+      <exercise>
+        <statement>
+          <p>Why is a general tensor not necessarily a pure tensor?</p>
+        </statement>
+        <solution>
+          <p>In <m>k^{2}</m> <m>\otimes</m> <m>k^{2}</m>, <m>e_{1}\otimes e_{1}</m> + <m>e_{2}\otimes e_{2}</m> corresponds to a rank-two matrix, unlike any pure tensor.</p>
+        </solution>
+      </exercise>
+    </exercises>
+    <p>Related concepts: Dual spaces, Modules, Tor, Universal properties, Vector bundles.</p>
+  </section>
+  <section xml:id="course-13-lesson-08">
+    <title>Abelian categories</title>
+    <p>Planned section. Full exposition has not yet been written.</p>
+  </section>
+</chapter>
